@@ -1,3 +1,7 @@
+# Bugs.
+# Will only work for valid input 'd' and 'c' (include boundaries).
+
+
 # Menu for the user to choose either the Click & Collect or Delivery option.
 # Print statement that asks the user whether they want their order to be for Click & Collect or Delivery.
 print ("Do you want your order to be CLICK & COLLECT or DELIVERED to you?")
