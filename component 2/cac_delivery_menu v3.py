@@ -16,7 +16,7 @@ print ("For DELIVERY, enter 2.") # Print statement asking the user to enter c fo
 low = 1
 high = 2
 
-# the 'while True' loop will create an infinite loop.
+# The 'while True' loop will create an infinite loop.
 while True:
     try: # The try statement will catch and handle except statements.
         delivery = int(input("Please enter a valid number.")) # Asking the user to enter their option.
