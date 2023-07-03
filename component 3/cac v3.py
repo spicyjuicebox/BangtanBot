@@ -22,8 +22,10 @@ while not valid:
         print (customer_details['name']) # Program will print the value that is assigned to the variable 'name', found in the 'customer_details' dictionary.
         # Use break to get out of the loop.
         break
+    # When the condition for the 'if' statement is false, the program will skip to the 'else' code.
     else:
-        print("Sorry, this cannot be blank.")
+        # The 'else' statement will print this line of code.
+        print("Sorry, this cannot be blank.") # The program lets the user know that what they enter cannot be blank.
         # No break so it will continue to go into a loop until the user enters the correct input.
 
 
@@ -41,8 +43,10 @@ while not valid:
         print (customer_details['phone']) # Program will print the value that is assigned to the variable 'phone', found in the 'customer_details' dictionary.
         # Use break to get out of the loop.
         break
+    # When the condition for the 'if' statement is false, the program will skip to the 'else' code.
     else:
-        print("Sorry, this cannot be blank.")
+        # The 'else' statement will print this line of code.
+        print("Sorry, this cannot be blank.") # The program lets the user know that what they enter cannot be blank.
         # No break so it will continue to go into a loop until the user enters the correct input.
 
 
