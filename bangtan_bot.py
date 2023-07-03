@@ -2,6 +2,8 @@
 
 # Bugs - (List bugs here.)
 # Known Bugs - (List known bugs here.)
+# Bug 03/07/2023: When entering input for 'name', it accepts numbers and other characters ('!') when it should not.
+# Bug 03/07/2023: When entering input for 'phone', it accepts letters and other characters ('!') when it should not.
 
 
 # IMPORT STATEMENTS found here. ~~~~~~~~~~~~~~
