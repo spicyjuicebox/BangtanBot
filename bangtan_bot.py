@@ -1,4 +1,4 @@
-# BangtanBot Program
+# BangtanBot Program.
 
 # Bugs - (List bugs here.)
 # Known Bugs - (List known bugs here.)
@@ -13,21 +13,43 @@ from random import randint # Choosing random integer.
 
 
 # LISTS found here. ~~~~~~~~~~~~~~
-# LIST OF RANDOM NAMES ~~~~~~~~~~~~~~
+# LIST OF RANDOM NAMES. ~~~~~~~~~~~~~~
 # The line below is a list for 'names' with the sequence of strings for each name.
 names = ["Jungkook", "Jimin", "V", "J-Hope", "Suga", "RM", "Jin", "Jaehyun", "Felix", "Sunghoon"]
 
 
-# Dictionary to store information found here.
+# DICTIONARY TO STORE INFORMATION found here. ~~~~~~~~~~~~~~
+# Customer Details Dictionary
+# Curly brackets indicate a dictionary (stores information - customer details). Holds information, better than a list.
+customer_details = {}
 
 
-# Validation.
+# VALIDATION found here. ~~~~~~~~~~~~~~
+# Validates Inputs to check if they are blank.
+# Function - Everytime you want to check if something is not blank, it is sent to this function. Taking a question/variable from somewhere else.
+def not_blank(question): # This is a parameter. It brings variables ('question') in from different places in our code. Parameter is anything inside the brackets. Bringing in the question.
+    # What the user enters in this input line of code will be assigned to the variable, 'name'.
+    # Assigning the value, 'False', to the variable, 'valid'.
+    # By assigning it this way, it is indicated that the condition for the valid variable is not satisfied.
+    # It is used to track the values being entered by the user into the program and will control the flow of the program.
+    valid = False
+    # Starting a while loop as long as the condition is 'not valid'.
+    while not valid:
+        # The question is a variable in the input section. It is then brought up as a parameter.
+        response = input(question) # Response to the question.  Displaying the question.
+        if response != "": # Break will break out of the loop. Here, we are going to return the response back out with the function. Asking for a response and is checking to see if it is blank.
+            return response.title() # Changes all to title class (will capitalise the first letter entered).  # Also kicks out of the loop.  It will return it back down and be entered into the dictionary.
+        # When the condition for the 'if' statement is false, the program will skip to the 'else' code.
+        else:
+            # The 'else' statement will print this line of code.
+            print("This cannot be blank.")
 
 
-# WELCOME MESSAGE WITH RANDOMLY GENERATED NAME ~~~~~~~~~~~~~~
+# WELCOME MESSAGE WITH RANDOMLY GENERATED NAME. ~~~~~~~~~~~~~~
 # This is a function for the welcome part of the main program.
 # This function is made to generate a random name from the 'names' list above, then print out a welcome message.
 # The welcome message will incluce the selected, randomly generated name.
+# Defining the function, 'welcome()'.
 def welcome(): # This new function is defined as 'welcome'.
     # Purpose of what this function is for.
     '''
@@ -38,7 +60,7 @@ def welcome(): # This new function is defined as 'welcome'.
     '''
     num = randint(0,9) # 0 is the lower bound, 9 is the upper bound. Generates a random number between 0 and 9.
     name = (names[num]) # Accessing the 'names' list to assign each with a number from 'num'.
-    # START PRINTING THE GREETING ~~~~~~~~~~~~~~
+    # START PRINTING THE GREETING. ~~~~~~~~~~~~~~
     print("2.. 3.. Hello, we are BTS!")
     print("Thank you for choosing...")
     # The \033[95m" + will make the colour of the text in the print code to the colour purple.
@@ -60,9 +82,9 @@ def welcome(): # This new function is defined as 'welcome'.
     print("I will be here to help you make your online orders!")
 
 
-# MENU FOR CLICK & COLLECT/DELIVERY ~~~~~~~~~~~~~~
+# MENU FOR CLICK & COLLECT/DELIVERY. ~~~~~~~~~~~~~~
 # Menu for the user to choose either the Click & Collect or Delivery option.
-def clickandcollect():
+def order_type():
     # Print statement that asks the user whether they want their order to be for Click & Collect or Delivery.
     print ("Do you want your order to be CLICK & COLLECT or DELIVERED to you?")
 
@@ -86,7 +108,8 @@ def clickandcollect():
             if delivery >= 1 and delivery <= 2:
                 if delivery == 1: # Checking if what is entered is '1'.
                     print ("Click & Collect") # If '1' is entered, 'Click & Collect' will be printed.
-                    break # Once the input satisfies this point of the code, the program will break out of this while loop.
+                    clickandcollect()
+                    break
             
                 elif delivery == 2: # Checking if what is entered is '2'.
                     print ("Delivery") # If '2' is entered, 'Delivery' will be printed.
@@ -102,7 +125,23 @@ def clickandcollect():
             print("Please enter 1 or 2.")
 
 
-# Click & Collect Information.
+# CLICK & COLLECT INFORMATION. ~~~~~~~~~~~~~~
+# Question (variable) comes from here.
+# Defining the function, 'clickandcollect()'.
+def clickandcollect():
+    question = ("Please enter your name. ") # Displaying our question.
+    # This will go into the customer_details dictionary and it will have a variable name of 'name'.
+    # Getting the customer details name from the above function, bringing in the question.
+    customer_details['name'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    #print(customer_details['name'])
+
+
+    question = ("Please enter your phone number. ") # Displaying our question.
+    # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
+    # Getting the customer details phone from the above function, bringing in the question.
+    customer_details['phone'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    #print(customer_details['phone'])
+    print(customer_details)
 
 
 # Delivery Information.
@@ -139,7 +178,7 @@ def main():
     Returns: None.
     '''
     welcome() # Action being executed (the 'welcome()' function. Called within the 'main()' function.
-    clickandcollect() # Action being executed (the 'clickandcollect()' function. Called within the 'main()' function.
+    order_type() # Action being executed (the 'order_type()' function. Called within the 'main()' function.
 
 
 # Call the main function.
