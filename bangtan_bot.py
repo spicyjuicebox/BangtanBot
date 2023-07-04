@@ -110,11 +110,12 @@ def order_type():
             if delivery >= 1 and delivery <= 2:
                 if delivery == 1: # Checking if what is entered is '1'.
                     print ("Click & Collect") # If '1' is entered, 'Click & Collect' will be printed.
-                    clickandcollect()
+                    clickandcollect_info() # Will run the clickandcollect() function.
                     break
             
                 elif delivery == 2: # Checking if what is entered is '2'.
                     print ("Delivery") # If '2' is entered, 'Delivery' will be printed.
+                    delivery_info() # Will run the delivery() function.
                     break # Once the input satisfies this point of the code, the program will break out of this while loop.
             
             # When input is a number that is not 1 or 2, the program will run the else statement.
@@ -126,27 +127,6 @@ def order_type():
             print("That is not a valid number.")
             print("Please enter 1 or 2.")
 
-
-# CLICK & COLLECT INFORMATION. ~~~~~~~~~~~~~~
-# Question (variable) comes from here.
-# Defining the function, 'clickandcollect()'.
-def clickandcollect():
-    question = ("Please enter your name. ") # Displaying our question.
-    # This will go into the customer_details dictionary and it will have a variable name of 'name'.
-    # Getting the customer details name from the above function, bringing in the question.
-    customer_details['name'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
-    #print(customer_details['name'])
-
-
-    question = ("Please enter your phone number. ") # Displaying our question.
-    # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
-    # Getting the customer details phone from the above function, bringing in the question.
-    customer_details['phone'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
-    #print(customer_details['phone'])
-    print(customer_details)
-
-
-# Delivery Information.
 
 
 # BTS Shop Items.

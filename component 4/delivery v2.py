@@ -22,6 +22,7 @@ def not_blank(question): # This is a parameter. It brings variables ('question')
             print("This cannot be blank.")
 
 
+# Defined the function for the delivery component for the main program.
 def delivery():
     # Basic Instructions
     # Question (variable) comes from here.
