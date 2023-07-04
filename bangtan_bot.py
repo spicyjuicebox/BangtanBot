@@ -79,7 +79,7 @@ def welcome(): # This new function is defined as 'welcome'.
                                                                                                                                 
     """ + "\033[0m") # The line of code, \033[0m" will ensure that the colour will only affect this print statement.
     # If I do not do the code above, then the other print statements underneath BANGTAN BOT will also be of the colour purple.
-    print("We are a trusted chat bot that will help you make online orders for BTS merch!")
+    print("We are a trusted chat bot that will help you make online orders for BTS albums!")
     print("My name is {}!". format(name)) # The '{}' will be replaced by what we have formatted, 'name', so that it is replaced with a randomly generated name from the list.
     print("I will be here to help you make your online orders!")
 
@@ -127,6 +127,66 @@ def order_type():
             print("That is not a valid number.")
             print("Please enter 1 or 2.")
 
+
+# CLICK & COLLECT INFORMATION. ~~~~~~~~~~~~~~
+# Question (variable) comes from here.
+# Defining the function, 'clickandcollect()' for the click and collect component of the main program.
+def clickandcollect_info():
+    question = ("Please enter your name. ") # Displaying our question.
+    # This will go into the customer_details dictionary and it will have a variable name of 'name'.
+    # Getting the customer details name from the above function, bringing in the question.
+    customer_details['name'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    #print(customer_details['name'])
+
+
+    question = ("Please enter your phone number. ") # Displaying our question.
+    # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
+    # Getting the customer details phone from the above function, bringing in the question.
+    customer_details['phone'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    #print(customer_details['phone'])
+    print(customer_details)
+
+
+# DELIVERY INFORMATION. ~~~~~~~~~~~~~~
+# Question (variable) comes from here.
+# Defining the function, 'delivery' for the delivery component of the main program.
+def delivery_info():
+    # Basic Instructions
+    # Question (variable) comes from here.
+    question = ("Please enter your name. ") # Displaying our question.
+    # This will go into the customer_details dictionary and it will have a variable name of 'name'.
+    # Getting the customer details name from the above function, bringing in the question.
+    customer_details['name'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    print(customer_details['name'])
+
+
+    question = ("Please enter your phone number. ") # Displaying our question.
+    # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
+    # Getting the customer details phone from the above function, bringing in the question.
+    customer_details['phone'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    print(customer_details['phone'])
+
+
+    question = ("Please enter your house number. ") # Displaying our question.
+    # This will go into the customer_details dictionary and it will have a variable name of 'house'.
+    # Getting the customer details phone from the above function, bringing in the question.
+    customer_details['house'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    print(customer_details['house'])
+
+
+    question = ("Please enter your street name. ") # Displaying our question.
+    # This will go into the customer_details dictionary and it will have a variable name of 'street'.
+    # Getting the customer details phone from the above function, bringing in the question.
+    customer_details['street'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    print(customer_details['street'])
+
+
+    question = ("Please enter your suburb. ") # Displaying our question.
+    # This will go into the customer_details dictionary and it will have a variable name of 'suburb'.
+    # Getting the customer details phone from the above function, bringing in the question.
+    customer_details['suburb'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    print(customer_details['suburb'])
+    print(customer_details)
 
 
 # BTS Shop Items.
