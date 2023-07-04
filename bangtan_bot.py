@@ -226,7 +226,7 @@ def albums():
         # The output will be printed out through the format, "{album_number} {album_name} ${album_price}".
 
 
-# CHOOSING THE NUMBER OF ALBUMS TO PURHCASE. ~~~~~~~~~~~~~~
+# CHOOSING THE NUMBER OF ALBUMS TO PURCHASE. ~~~~~~~~~~~~~~
 # Choosing which items to purchase - print each album ordered with cast.
 # Defining the function for the ordering of the albums as order_album().
 def order_album():
