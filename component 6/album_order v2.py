@@ -64,11 +64,3 @@ for item in range(num_albums): # Counting through how many albums have been chos
         print("{} ${:.2f}" .format(album_names[album_ordered],album_prices[album_ordered]))
         # The selected albums and their names and prices will be displayed through the format, "Album name $Album price".
         num_albums = num_albums-1 # Ordered the first album, going back to order the rest of them, taking 1 off that total.
-
-#print(order_list)
-#print(order_cost)
-
-# Countdown until all albums are ordered
-
-
-# Print order
