@@ -13,9 +13,9 @@ album_prices = [25.70, 32.20, 28.40, 40.20, 40.10, 45.70, 62.50, 45.80, 50.50, 5
 # This lines up with the album_names of '2 Cool 4 Skool' with it being at position 0.
 
 
-# Defining the function for the menu as menu().
+# Defining the function for the albums as albums().
 # This function will be responsible for displaying the album names, album prices and their corresponding index numbers.
-def menu():
+def albums():
     # Making a variable (Will count through 15 times).
     number_albums = 15 # This is the total number of albums that the bot will be selling.
 
@@ -29,4 +29,4 @@ def menu():
         # The output will be printed out through the format, "{album_number} {album_name} ${album_price}".
 
 # Calling the menu() function to check if the album_list component is working properly.
-menu()
+albums()
