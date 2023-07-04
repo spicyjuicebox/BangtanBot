@@ -34,6 +34,12 @@ album_prices = [25.70, 32.20, 28.40, 40.20, 40.10, 45.70, 62.50, 45.80, 50.50, 5
 # The first 25.70 is at position 0.
 # This lines up with the album_names of '2 Cool 4 Skool' with it being at position 0.
 
+# LIST OF STORED ORDERED ALBUMS. ~~~~~~~~~~~~~~
+order_list = []
+
+# LIST OF STORED ALBUM PRICES. ~~~~~~~~~~~~~~
+order_cost = []
+
 
 # DICTIONARY TO STORE INFORMATION found here. ~~~~~~~~~~~~~~
 # Customer Details Dictionary
@@ -220,8 +226,61 @@ def albums():
         # The output will be printed out through the format, "{album_number} {album_name} ${album_price}".
 
 
-# Choosing the number of items to purhcase.
-# Choosing which items to purchase.
+# CHOOSING THE NUMBER OF ALBUMS TO PURHCASE. ~~~~~~~~~~~~~~
+# Choosing which items to purchase - print each album ordered with cast.
+# Defining the function for the ordering of the albums as order_album().
+def order_album():
+    # Ask for total number of albums for order.
+    num_albums = 0 # This variable has the value of 0.
+
+
+    # Starting loop with the 'while' statement. The condition is 'True'.
+    while True:
+        try: # The try statement will catch and handle except statements.
+            # The program asks the user how many albums they want to order with the 'input' statement and takes it in as a string.
+            # The 'int' is used to convert the input of the user into an integer.
+            # The integer will then be stored to the 'num_albums' variable.
+            num_albums = int(input("How many albums do you want to order? "))
+            if num_albums >= 1 and num_albums <= 5: # Not accepting anything less than one, not accepting anything greater than 5.
+                break # If meets criteria.
+            # If the input is less than 1 or greater than 5, the program will run the 'else' statement.
+            else:
+                print("Your order must be between 1 and 5.")
+        # Validation for the input.
+        except ValueError:
+            print("That is not a valid number.") # Prints if the input is not a number (a letter, a character).
+            print("Please enter a number between 1 and 5.") # Prints if the input is a number less than 1 or greater than 5.
+
+
+    # Choose album from the album list.
+    # Used the 'for' statement to create a loop for the number of items that the user has chosen, found in num_albums.
+    for item in range(num_albums): # Counting through how many albums have been chosen.
+        # Another loop is made with the 'while' statement to ensure that the user can enter their chosen number.
+        while num_albums > 0:
+            while True:
+                try: # The try statement will catch and handle except statements.
+                    # The program asks the user how many albums they want to order with the 'input' statement and takes it in as a string.
+                    # The 'int' is used to convert the input of the user into an integer.
+                    album_ordered = int(input("Please choose the albums you would like to order by entering its corresponding number from the list provided. "))
+                    if album_ordered >= 1 and album_ordered <= 15: # Not accepting anything less than one, not accepting anything greater than 15.
+                        break # If meets criteria.
+                    # If the input is less than 1 or greater than 15, the program will run the 'else' statement.
+                    else:
+                        print("Your order must be between 1 and 15.")
+                # Validation for the input.
+                except ValueError:
+                    print("That is not a valid number.") # Prints if the input is not a number (a letter, a character).
+                    print("Please enter a number between 1 and 15.") # Prints if the input is a number less than 1 or greater than 15.
+            album_ordered = album_ordered -1 # The program will subtract 1 from the entered number of albums that the user wants to order. This is to match the index number of the album list.
+            order_list.append(album_names[album_ordered]) # Picking out the album name from 'album_names' and is entered into the 'order_list'.
+            order_cost.append(album_prices[album_ordered]) # Picking out the album price from 'album_prices' and is entered into the 'order_cost'.
+            print("{} ${:.2f}" .format(album_names[album_ordered],album_prices[album_ordered]))
+            # The selected albums and their names and prices will be displayed through the format, "Album name $Album price".
+            # The {:.2f} rounds them up into 2 decimal places or 2 floats. The 0 appears now.
+            # The album_names[count] will retrieve the name of the album at the current index, 'count', from the 'album_names' list.
+            # The album_prices[count] will retrieve the price of the album at the current index, 'count', from the 'album_prices' list.
+            # The output will be printed out through the format, "{album_number} {album_name} ${album_price}".
+            num_albums = num_albums-1 # Ordered the first album, going back to order the rest of them, taking 1 off that total.
 
 
 # Print order out - including if order is del or pick up and names and price of each pizza - total cost including any delivery charge.
@@ -250,6 +309,7 @@ def main():
     welcome() # Action being executed (the 'welcome()' function. Called within the 'main()' function.
     order_type() # Action being executed (the 'order_type()' function. Called within the 'main()' function.
     albums() # Action being executed (the 'albums()' function. Called within the 'main()' function.
+    order_album() # Action being executed (the 'order_album()' function. Called within the 'main()' function.
 
 
 # Call the main function.
