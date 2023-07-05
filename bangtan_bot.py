@@ -333,7 +333,45 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
     print(f"${total_cost:.2f}") # The ':.2f' will round the sum of the order to 2 decimal places.
 
 
+# CONFIRM OR CANCEL THE ORDER. ~~~~~~~~~~~~~~
 # Ability to cancel the current order or to proceed with a new order.
+def confirm_cancel(del_click): # Paramter used to bring in the variable, 'del_click' into this function of 'confirm_cancel()' to check if the order is for Click and Collect or Delivery.
+    # The CONFIRM or CANCEL order options.
+    print ("Please confirm your order.")
+    print ("To CONFIRM, please enter 1.") # Letting the user know that entering 1 will CONFIRM their order.
+    print ("To CANCEL, please enter 2.") # Letting the user know that entering 2 will CANCEL their order.
+    while True:
+        try:
+            confirm = int(input("Please enter the number 1 or 2. ")) # The input, 1 or 2, will be equal to 'confirm'.
+            if confirm == 1 or confirm == 2: # Checking if the input is only 1 or 2.
+                if confirm == 1: # If 'confirm' is equal to 1, the order is confirmed.
+                    # Letting the user know that the order has been confirmed.
+                    print("Your Order has been Confirmed.")
+                    if del_click == "clickandcollect": # Bringing in the parameter of 'del_click' checks if Click and Collect was chosen.
+                        # Print statement printed only when click and collect was chosen.
+                        print("Order Confirmed. You will receive a text message shortly to know when your order is ready to click and collect.")
+                    elif del_click == "delivery": # Bringing in the parameter of 'del_click' checks if Delivery was chosen.
+                        # Print statement printed only when Delivery was chosen.
+                        print("You will soon receive text messages to notify you of the status of your delivery.")
+                    break # Breaking out of the loop.
+
+                    # Testing print("Order Confirmed. You will receive a text message shortly to know when your order is ready to click and collect.")
+                    # Testing print("You will soon receive text messages to notify you of the status of your delivery.")
+                    # Testing break # Breaking out of the loop.
+
+                elif confirm == 2: # If 'confirm' is equal to 2, the order is cancelled.
+                    # Letting the user know that the order has been cancelled.
+                    print("Your Order has been Cancelled.")
+                    print("You can restart your order or exit the Bangtan Bot.")
+                    break # Breaking out of the loop.
+            # When input is a number that is not 1 or 2.
+            else:
+                print("The number must be 1 or 2.")
+        
+        # When the input is a letter (not a number).
+        except ValueError:
+            print("That is not a valid number.")
+            print("Please enter 1 or 2. ")
 
 
 # Option to create a new order or to exit out of the program.
@@ -360,6 +398,7 @@ def main():
     order_album() # Action being executed (the 'order_album()' function. Called within the 'main()' function.
     # Parameter used to bring one variable from one function to another.
     print_order(del_click) # The result of the variable, 'del_click', click and collect or delivery, will be sent to this function.
+    confirm_cancel(del_click)
 
 
 # Call the main function.
