@@ -1,9 +1,10 @@
 # BangtanBot Program.
 
 # Bugs - (List bugs here.)
-# Known Bugs - (List known bugs here.)
 # Bug 03/07/2023: When entering input for 'name', it accepts numbers and other characters ('!') when it should not.
 # Bug 03/07/2023: When entering input for 'phone', it accepts letters and other characters ('!') when it should not.
+
+# Known Bugs - (List known bugs here.)
 
 
 # IMPORT STATEMENTS found here. ~~~~~~~~~~~~~~
@@ -320,7 +321,7 @@ def order_album():
 def print_order(del_click): # Parameter used. The variable, 'del_click' is brought into the function, 'print_order()' and it used within it.
     print()
     total_cost = sum(order_cost)
-    print("Customer Details") # Letting the user know that was is going to be printed will be their customer details.
+    print("Your Customer Details") # Letting the user know that was is going to be printed will be their customer details.
     # If the variable, 'del_click' is equal to 'clickandcollect', the following will be printed.
     if del_click == "clickandcollect":
         print("Your Order is for Click and Collect.")
@@ -410,38 +411,43 @@ def confirm_cancel(del_click): # Paramter used to bring in the variable, 'del_cl
 # Option to create a new order or to exit out of the program.
 # Defines the 'sys' function class for the 'sys.exit' so that it exits the program.
 def new_exit():
+
+    # Setting the variable 'LOW' to 1 and the variable 'HIGH' to 2.
+    # LOW and HIGH are capitals which means that they are constant.
+    # When they are constant, they do not change. They are literal.
+    # Using the 'LOW' parameter.
+    LOW = 1 # Set to literal 1.
+    # Using the 'HIGH' parameter.
+    HIGH = 2 # Set to literal 2.
+
+
+    # Asking the user to enter a number between 1 or 2 for testing.
+    # A variable called 'question'.
+    # Using 'f' to format the 'LOW' and 'HIGH' inside the '{}'.
+    question = (f"Please enter a number between {LOW} and {HIGH}. ")
+
     # Asking the user if they want to start another order or to exit the Bangtan Bot program.
     print ("Do you want to start another Order or Exit?")
     print ("To start another order, please enter 1.") # Input of 1 will make another order.
     print ("To exit the BOT, please enter 2.") # Input of 2 will exit the Bangtan Bot program.
-    while True:
-        try:
-            confirm = int(input("Please enter a number. ")) # The input, 1 or 2, will be equal to 'confirm'.
-            if confirm >= 1 and confirm <= 2: # Checking if the input is only 1 or 2.
-                if confirm == 1: # If 'confirm' is equal to 1, a new order will be made.
-                    print ("New Order") # Letting the user know that a new order will be made.
-                    # Clearing the data from the current order from all lists.
-                    order_list.clear() # Clearing data from the list, 'order_list'.
-                    order_cost.clear() # Clearing data from the list, 'order_cost'.
-                    customer_details.clear() # Clearing data from the list, 'customer_details'.
-                    main()
-                    break # Breaking out of the loop.
 
-                elif confirm == 2: # If 'confirm' is equal to 2, the program will stop.
-                    print ("Exit") # Letting the user know that they will now exit out of the Bangtan Bot program.
-                    order_list.clear() # Clearing data from the list, 'order_list'.
-                    order_cost.clear() # Clearing data from the list, 'order_cost'.
-                    customer_details.clear() # Clearing data from the list, 'customer_details'.
-                    sys.exit() # Exiting out of the program.
-                    break # Breaking out of the loop.
-            # When input is a number that is not 1 or 2.
-            else:
-                print("The number must be 1 or 2.")
-        
-        # When the input is a letter (not a number).
-        except ValueError:
-            print("That is not a valid number.")
-            print("Please enter 1 or 2. ")
+    # 'LOW' is 1, 'HIGH" is 2, 'question' is "Please enter a number between 1 and 2. ".
+    confirm = val_int(LOW, HIGH, question)
+
+    if confirm == 1: # If 'confirm' is equal to 1, a new order will be made.
+        print ("New Order") # Letting the user know that a new order will be made.
+        # Clearing the data from the current order from all lists.
+        order_list.clear() # Clearing data from the list, 'order_list'.
+        order_cost.clear() # Clearing data from the list, 'order_cost'.
+        customer_details.clear() # Clearing data from the list, 'customer_details'.
+        main()
+
+    elif confirm == 2: # If 'confirm' is equal to 2, the program will stop.
+        print ("Exit") # Letting the user know that they will now exit out of the Bangtan Bot program.
+        order_list.clear() # Clearing data from the list, 'order_list'.
+        order_cost.clear() # Clearing data from the list, 'order_cost'.
+        customer_details.clear() # Clearing data from the list, 'customer_details'.
+        sys.exit() # Exiting out of the program.
 
 
 # MAIN FUNCTION. ~~~~~~~~~~~~~~
