@@ -305,6 +305,9 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
     # If the variable, 'del_click' is equal to 'delivery', the following will be printed.
     elif del_click == "delivery":
         print("Your Order is for Delivery.")
+        # If there are 5 or more items ordered, make a print statement saying that there is a delivery charge of $9.00.
+        print("Since you have ordered 5 or more albums, there will be a $9.00 delivery charge.")
+        total_cost = total_cost + 9 # Adding the $9.00 delivery charge to the total cost of the order.
         # Print statement that is used to display to the user the details of their order after being formatted.
         print(f"Customer Name: {customer_details['name']} \nCustomer Phone: {customer_details['phone']} \nCustomer Address: {customer_details['house']} \nCustomer Street: {customer_details['street']} \nCustomer Suburb: {customer_details['suburb']}")
         # The 'f' at the front is a way to format.
@@ -314,7 +317,7 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
         # For the 'Customer Street' in {customer_details['street']}, it will have the inserted value of the 'street' key from the 'customer_details' dictionary list.
         # For the 'Customer Suburb' in {customer_details['suburb']}, it will have the inserted value of the 'suburb' key from the 'customer_details' dictionary list.
     print()
-    print("Order Details") # Letting the user know that was is going to be printed will be their order details.
+    print("Your Order Details") # Letting the user know that was is going to be printed will be their order details.
     count = 0 # 25.70 is at the position of 0.
     # The 'for' statement will create a loop that will go through each item in the 'order_list'.
     for item in order_list:
