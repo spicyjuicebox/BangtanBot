@@ -7,6 +7,7 @@
 
 
 # IMPORT STATEMENTS found here. ~~~~~~~~~~~~~~
+import sys # Importing 'sys' is the function class for the 'sys.exit' so that it exits the program.
 import random # Importing the random module. Provides function for generating random numbers and choosing something random from the selection.
 from random import randint # Choosing random integer.
 
@@ -350,9 +351,11 @@ def confirm_cancel(del_click): # Paramter used to bring in the variable, 'del_cl
                     if del_click == "clickandcollect": # Bringing in the parameter of 'del_click' checks if Click and Collect was chosen.
                         # Print statement printed only when click and collect was chosen.
                         print("Order Confirmed. You will receive a text message shortly to know when your order is ready to click and collect.")
+                        new_exit() # The function of starting a new order to exiting out of the Bangtan Bot program will run after confirming.
                     elif del_click == "delivery": # Bringing in the parameter of 'del_click' checks if Delivery was chosen.
                         # Print statement printed only when Delivery was chosen.
                         print("You will soon receive text messages to notify you of the status of your delivery.")
+                        new_exit() # The function of starting a new order to exiting out of the Bangtan Bot program will run after confirming.
                     break # Breaking out of the loop.
 
                     # Testing print("Order Confirmed. You will receive a text message shortly to know when your order is ready to click and collect.")
@@ -363,6 +366,7 @@ def confirm_cancel(del_click): # Paramter used to bring in the variable, 'del_cl
                     # Letting the user know that the order has been cancelled.
                     print("Your Order has been Cancelled.")
                     print("You can restart your order or exit the Bangtan Bot.")
+                    new_exit() # The function of starting a new order to exiting out of the Bangtan Bot program will run after cancelling.
                     break # Breaking out of the loop.
             # When input is a number that is not 1 or 2.
             else:
@@ -374,7 +378,42 @@ def confirm_cancel(del_click): # Paramter used to bring in the variable, 'del_cl
             print("Please enter 1 or 2. ")
 
 
+# START A NEW ORDER OR EXIT OUT OF THE BANGTAN BOT PROGRAM. ~~~~~~~~~~~~~~
 # Option to create a new order or to exit out of the program.
+# Defines the 'sys' function class for the 'sys.exit' so that it exits the program.
+def new_exit():
+    # Asking the user if they want to start another order or to exit the Bangtan Bot program.
+    print ("Do you want to start another Order or Exit?")
+    print ("To start another order, please enter 1.") # Input of 1 will make another order.
+    print ("To exit the BOT, please enter 2.") # Input of 2 will exit the Bangtan Bot program.
+    while True:
+        try:
+            confirm = int(input("Please enter a number. ")) # The input, 1 or 2, will be equal to 'confirm'.
+            if confirm >= 1 and confirm <= 2: # Checking if the input is only 1 or 2.
+                if confirm == 1: # If 'confirm' is equal to 1, a new order will be made.
+                    print ("New Order") # Letting the user know that a new order will be made.
+                    # Clearing the data from the current order from all lists.
+                    order_list.clear() # Clearing data from the list, 'order_list'.
+                    order_cost.clear() # Clearing data from the list, 'order_cost'.
+                    customer_details.clear() # Clearing data from the list, 'customer_details'.
+                    main()
+                    break # Breaking out of the loop.
+
+                elif confirm == 2: # If 'confirm' is equal to 2, the program will stop.
+                    print ("Exit") # Letting the user know that they will now exit out of the Bangtan Bot program.
+                    order_list.clear() # Clearing data from the list, 'order_list'.
+                    order_cost.clear() # Clearing data from the list, 'order_cost'.
+                    customer_details.clear() # Clearing data from the list, 'customer_details'.
+                    sys.exit() # Exiting out of the program.
+                    break # Breaking out of the loop.
+            # When input is a number that is not 1 or 2.
+            else:
+                print("The number must be 1 or 2.")
+        
+        # When the input is a letter (not a number).
+        except ValueError:
+            print("That is not a valid number.")
+            print("Please enter 1 or 2. ")
 
 
 # MAIN FUNCTION. ~~~~~~~~~~~~~~
@@ -398,7 +437,8 @@ def main():
     order_album() # Action being executed (the 'order_album()' function. Called within the 'main()' function.
     # Parameter used to bring one variable from one function to another.
     print_order(del_click) # The result of the variable, 'del_click', click and collect or delivery, will be sent to this function.
-    confirm_cancel(del_click)
+    # Parameter used to bring one variable from one function to another.
+    confirm_cancel(del_click) # The result of the variable, 'del_click', click and collect or delivery, will be sent to this function.
 
 
 # Call the main function.
