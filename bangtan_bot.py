@@ -268,25 +268,27 @@ def order_album():
     # Ask for total number of albums for order.
     num_albums = 0 # This variable has the value of 0.
 
-
-    # Starting loop with the 'while' statement. The condition is 'True'.
-    while True:
-        try: # The try statement will catch and handle except statements.
-            # The program asks the user how many albums they want to order with the 'input' statement and takes it in as a string.
-            # The 'int' is used to convert the input of the user into an integer.
-            # The integer will then be stored to the 'num_albums' variable.
-            num_albums = int(input("How many albums do you want to order? "))
-            if num_albums >= 1 and num_albums <= 8: # Not accepting anything less than one, not accepting anything greater than 8.
-                break # If meets criteria.
-            # If the input is less than 1 or greater than 8, the program will run the 'else' statement.
-            else:
-                print("Your order must be between 1 and 8.")
-        # Validation for the input.
-        except ValueError:
-            print("That is not a valid number.") # Prints if the input is not a number (a letter, a character).
-            print("Please enter a number between 1 and 8.") # Prints if the input is a number less than 1 or greater than 8.
+    # Setting the variable 'LOW' to 1 and the variable 'HIGH' to 2.
+    # LOW and HIGH are capitals which means that they are constant.
+    # When they are constant, they do not change. They are literal.
+    # Using the 'LOW' parameter.
+    LOW = 1 # Set to literal 1.
+    # Using the 'HIGH' parameter.
+    HIGH = 8 # Set to literal 8.
+    # This is different to the other 'HIGH' variable being equal to 2.
 
 
+    # Asking the user to enter a number between 1 or 2 for testing.
+    # A variable called 'question'.
+    # Using 'f' to format the 'LOW' and 'HIGH' inside the '{}'.
+    question = (f"Please enter a number between {LOW} and {HIGH}. ")
+
+    
+    # Asking the user how many albums they want to order.
+    print("How many albums do you want to order?")
+    # The number of albums entered will go through the 'val_int()' function.
+    # 'LOW' is 1, 'HIGH" is 8, 'question' is "Please enter a number between 1 and 8. ".
+    num_albums = val_int(LOW, HIGH, question)
     # Choose album from the album list.
     # Used the 'for' statement to create a loop for the number of items that the user has chosen, found in num_albums.
     for item in range(num_albums): # Counting through how many albums have been chosen.
