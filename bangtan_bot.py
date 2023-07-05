@@ -268,7 +268,7 @@ def order_album():
     # Ask for total number of albums for order.
     num_albums = 0 # This variable has the value of 0.
 
-    # Setting the variable 'LOW' to 1 and the variable 'HIGH' to 2.
+    # Setting the variable 'LOW' to 1 and the variable 'HIGH' to 8.
     # LOW and HIGH are capitals which means that they are constant.
     # When they are constant, they do not change. They are literal.
     # Using the 'LOW' parameter.
@@ -276,6 +276,8 @@ def order_album():
     # Using the 'HIGH' parameter.
     HIGH = 8 # Set to literal 8.
     # This is different to the other 'HIGH' variable being equal to 2.
+    MENU_LOW = 1 # Lowest number of available albums.
+    MENU_HIGH = 15 # Highest number of available albums.
 
 
     # Asking the user to enter a number between 1 or 2 for testing.
@@ -294,20 +296,12 @@ def order_album():
     for item in range(num_albums): # Counting through how many albums have been chosen.
         # Another loop is made with the 'while' statement to ensure that the user can enter their chosen number.
         while num_albums > 0:
-            while True:
-                try: # The try statement will catch and handle except statements.
-                    # The program asks the user how many albums they want to order with the 'input' statement and takes it in as a string.
-                    # The 'int' is used to convert the input of the user into an integer.
-                    album_ordered = int(input("Please choose the albums you would like to order by entering its corresponding number from the list provided. "))
-                    if album_ordered >= 1 and album_ordered <= 15: # Not accepting anything less than one, not accepting anything greater than 15.
-                        break # If meets criteria.
-                    # If the input is less than 1 or greater than 15, the program will run the 'else' statement.
-                    else:
-                        print("Your order must be between 1 and 15.")
-                # Validation for the input.
-                except ValueError:
-                    print("That is not a valid number.") # Prints if the input is not a number (a letter, a character).
-                    print("Please enter a number between 1 and 15.") # Prints if the input is a number less than 1 or greater than 15.
+            print("Please choose the albums you would like to order by entering its corresponding number from the list provided. ")
+            question = (f"Please enter a number between {MENU_LOW} and {MENU_HIGH}. ")
+            album_ordered = val_int(MENU_LOW, MENU_HIGH, question)
+            # Bringing in the 'MENU_LOW', 1, 'MENU_HIGH', 8 and 'question', "Please enter a number between 1 and 8. "
+
+
             album_ordered = album_ordered -1 # The program will subtract 1 from the entered number of albums that the user wants to order. This is to match the index number of the album list.
             order_list.append(album_names[album_ordered]) # Picking out the album name from 'album_names' and is entered into the 'order_list'.
             order_cost.append(album_prices[album_ordered]) # Picking out the album price from 'album_prices' and is entered into the 'order_cost'.
