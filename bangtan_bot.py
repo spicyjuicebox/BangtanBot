@@ -108,6 +108,9 @@ def welcome(): # This new function is defined as 'welcome'.
 # MENU FOR CLICK & COLLECT/DELIVERY. ~~~~~~~~~~~~~~
 # Menu for the user to choose either the Click & Collect or Delivery option.
 def order_type():
+    del_click = "" # This variable is equal to default, empty, blank string.
+    # This variable will change to 'clickandcollect' if 1 is entered.
+    # This variable will change to 'delivery' if 2 is entered.
     # Print statement that asks the user whether they want their order to be for Click & Collect or Delivery.
     print ("Do you want your order to be CLICK & COLLECT or DELIVERED to you?")
 
@@ -131,12 +134,15 @@ def order_type():
             if delivery >= 1 and delivery <= 2:
                 if delivery == 1: # Checking if what is entered is '1'.
                     print ("Click & Collect") # If '1' is entered, 'Click & Collect' will be printed.
+                    # If Click & Collect is chosen, then the variable, 'del_click', will equal to "clickandcollect".
+                    del_click = "clickandcollect" # This will change the 'del_click' variable.
                     clickandcollect_info() # Will run the clickandcollect() function.
                     break
-            
                 elif delivery == 2: # Checking if what is entered is '2'.
                     print ("Delivery") # If '2' is entered, 'Delivery' will be printed.
+                    # If Delivery is chosen, then the variable, 'del_click', will equal to "delivery".
                     delivery_info() # Will run the delivery() function.
+                    del_click = "delivery" # This will change the 'del_click' variable.
                     break # Once the input satisfies this point of the code, the program will break out of this while loop.
             
             # When input is a number that is not 1 or 2, the program will run the else statement.
@@ -147,6 +153,7 @@ def order_type():
         except ValueError:
             print("That is not a valid number.")
             print("Please enter 1 or 2.")
+    return del_click # This will return the 'del_click' variable back down to the main() function at 'del_click = order_type()'.
 
 
 # CLICK & COLLECT INFORMATION. ~~~~~~~~~~~~~~
@@ -157,14 +164,14 @@ def clickandcollect_info():
     # This will go into the customer_details dictionary and it will have a variable name of 'name'.
     # Getting the customer details name from the above function, bringing in the question.
     customer_details['name'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
-    #print(customer_details['name'])
+    print(customer_details['name'])
 
 
     question = ("Please enter your phone number. ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['phone'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
-    #print(customer_details['phone'])
+    print(customer_details['phone'])
     print(customer_details)
 
 
@@ -283,7 +290,41 @@ def order_album():
             num_albums = num_albums-1 # Ordered the first album, going back to order the rest of them, taking 1 off that total.
 
 
-# Print order out - including if order is del or pick up and names and price of each pizza - total cost including any delivery charge.
+# PRINT THE ORDER OUT. ~~~~~~~~~~~~~~
+# This will be included if order is for delivery or for click and collect and names and price of each album - total cost including any delivery charge.
+# Defining the function, 'print_order()'.
+def print_order(del_click): # Parameter used. The variable, 'del_click' is brought into the function, 'print_order()' and it used within it.
+    print()
+    total_cost = sum(order_cost)
+    print("Customer Details") # Letting the user know that was is going to be printed will be their customer details.
+    # If the variable, 'del_click' is equal to 'clickandcollect', the following will be printed.
+    if del_click == "clickandcollect":
+        print("Your Order is for Click and Collect.")
+        # Print statement that is used to display to the user the details of their order after being formatted.
+        print(f"Customer Name: {customer_details['name']} \nCustomer Phone: {customer_details['phone']}")
+    # If the variable, 'del_click' is equal to 'delivery', the following will be printed.
+    elif del_click == "delivery":
+        print("Your Order is for Delivery.")
+        # Print statement that is used to display to the user the details of their order after being formatted.
+        print(f"Customer Name: {customer_details['name']} \nCustomer Phone: {customer_details['phone']} \nCustomer Address: {customer_details['house']} \nCustomer Street: {customer_details['street']} \nCustomer Suburb: {customer_details['suburb']}")
+        # The 'f' at the front is a way to format.
+        # For the 'Customer Name' in {customer_details['name']}, it will have the inserted value of the 'name' key from the 'customer_details' dictionary list.
+        # For the 'Customer Phone' in {customer_details['phone']}, it will have the inserted value of the 'phone' key from the 'customer_details' dictionary list.
+        # For the 'Customer Address' in {customer_details['house']}, it will have the inserted value of the 'house' key from the 'customer_details' dictionary list.
+        # For the 'Customer Street' in {customer_details['street']}, it will have the inserted value of the 'street' key from the 'customer_details' dictionary list.
+        # For the 'Customer Suburb' in {customer_details['suburb']}, it will have the inserted value of the 'suburb' key from the 'customer_details' dictionary list.
+    print()
+    print("Order Details") # Letting the user know that was is going to be printed will be their order details.
+    count = 0 # 25.70 is at the position of 0.
+    # The 'for' statement will create a loop that will go through each item in the 'order_list'.
+    for item in order_list:
+        print("Ordered: {}  Cost: ${:.2f}" .format(item, order_cost[count])) # Will print the formatted albums ordered and their corresponding price.
+        # The ':.2f' will round the cost of each ordered album to 2 decimal places.
+        # The 'count' variable keeps track of the correct index in the 'order_cost' list.
+        count = count+1 # Adding 1 to the 'count' variable so that next time, when the function picks out a different item, it will become a different number.
+    print()
+    print("Total Order Cost") # Letting the user know that was is going to be printed will be their total order details.
+    print(f"${total_cost:.2f}") # The ':.2f' will round the sum of the order to 2 decimal places.
 
 
 # Ability to cancel the current order or to proceed with a new order.
@@ -307,9 +348,12 @@ def main():
     Returns: None.
     '''
     welcome() # Action being executed (the 'welcome()' function. Called within the 'main()' function.
-    order_type() # Action being executed (the 'order_type()' function. Called within the 'main()' function.
+    del_click = order_type() # Action being executed (the 'order_type()' function. Called within the 'main()' function.
+    # 'del_click' is equal to what comes out of the function, 'order_type()'.
     albums() # Action being executed (the 'albums()' function. Called within the 'main()' function.
     order_album() # Action being executed (the 'order_album()' function. Called within the 'main()' function.
+    # Parameter used to bring one variable from one function to another.
+    print_order(del_click) # The result of the variable, 'del_click', click and collect or delivery, will be sent to this function.
 
 
 # Call the main function.

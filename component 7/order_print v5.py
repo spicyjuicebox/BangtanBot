@@ -10,7 +10,7 @@ order_cost = [25.70, 32.20, 28.40, 40.20]
 customer_details = {'name': 'Mark','phone': '88','house': '45','street': 'Harry', 'suburb': 'Howick'}
 
 
-# Function.
+# Defining the function, 'print_order()'.
 def print_order():
     total_cost = sum(order_cost)
     print("Customer Details") # Letting the user know that was is going to be printed will be their customer details.
