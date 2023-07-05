@@ -248,15 +248,15 @@ def order_album():
             # The 'int' is used to convert the input of the user into an integer.
             # The integer will then be stored to the 'num_albums' variable.
             num_albums = int(input("How many albums do you want to order? "))
-            if num_albums >= 1 and num_albums <= 5: # Not accepting anything less than one, not accepting anything greater than 5.
+            if num_albums >= 1 and num_albums <= 8: # Not accepting anything less than one, not accepting anything greater than 8.
                 break # If meets criteria.
-            # If the input is less than 1 or greater than 5, the program will run the 'else' statement.
+            # If the input is less than 1 or greater than 8, the program will run the 'else' statement.
             else:
-                print("Your order must be between 1 and 5.")
+                print("Your order must be between 1 and 8.")
         # Validation for the input.
         except ValueError:
             print("That is not a valid number.") # Prints if the input is not a number (a letter, a character).
-            print("Please enter a number between 1 and 5.") # Prints if the input is a number less than 1 or greater than 5.
+            print("Please enter a number between 1 and 8.") # Prints if the input is a number less than 1 or greater than 8.
 
 
     # Choose album from the album list.
@@ -305,9 +305,12 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
     # If the variable, 'del_click' is equal to 'delivery', the following will be printed.
     elif del_click == "delivery":
         print("Your Order is for Delivery.")
-        # If there are 5 or more items ordered, make a print statement saying that there is a delivery charge of $9.00.
-        print("Since you have ordered 5 or more albums, there will be a $9.00 delivery charge.")
-        total_cost = total_cost + 9 # Adding the $9.00 delivery charge to the total cost of the order.
+        if len(order_list) >= 5: # Checking if 5 or more albums have been ordered.
+            # If there are 5 or more items ordered, make a print statement saying that there is a delivery charge of $9.00.
+            print("Since you have ordered 5 or more albums, there will be a $9.00 delivery charge.")
+            total_cost += 9  # Adding the $9.00 delivery charge to the total cost.
+        #print("Since you have ordered 5 or more albums, there will be a $9.00 delivery charge.")
+        #total_cost = total_cost + 9 # Adding the $9.00 delivery charge to the total cost of the order.
         # Print statement that is used to display to the user the details of their order after being formatted.
         print(f"Customer Name: {customer_details['name']} \nCustomer Phone: {customer_details['phone']} \nCustomer Address: {customer_details['house']} \nCustomer Street: {customer_details['street']} \nCustomer Suburb: {customer_details['suburb']}")
         # The 'f' at the front is a way to format.
