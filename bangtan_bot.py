@@ -69,6 +69,40 @@ def not_blank(question): # This is a parameter. It brings variables ('question')
             print("This cannot be blank.")
 
 
+# VALIDATION found here. ~~~~~~~~~~~~~~
+# Validating the menu for the user to choose either the Click & Collect or Delivery option.
+# Validating the inputs to check if they are an integer.
+# The function is asking the user for a number.
+def val_int(low, high, question): # Parameter, using three variables in the function, 'order_type()'.
+    # The 'low' becomes 1, 'high' becomes 2, 'question' becomes "Please enter a number between 1 and 2. ".
+    # The 'while True' loop will create an infinite loop.
+    while True:
+        try: # The try statement will catch and handle except statements. Trying to get input from the user.
+            # Asking the user to enter their option.
+            # The 'int' will make sure what the user inputs is an interger.
+            # Using the 'question' parameter.
+            # Trying the number.
+            num = int(input(question)) # The print statement prints and after this, the user enters their input. Trying to get an integer.
+
+            # The 'and' combines these two conditions. Both conditions must be true for the whole expression to be true.
+            # First condition checks if the num is an integer that is greater than or equal to 1, low.
+            # Second condition checks if the num is an integer that is less than or equal to 2, high.
+            # If both conditions are met, then the program will run either of the if or elif statement.
+            # If both or either of the conditions are not met, then the program will skip the if or elif statements and skip to the next part of the code.
+            if num >= low and num <= high: # Using the 'low' and 'high' parameter.
+                # Storing 1 or 2 into the variable, 'answer'.
+                return num # Return means that this number, 1, low, or 2, high, is stored into the variable, answer. Breaks out of loop.
+                # Will return the number back to the 'delivery' variable in the 'order_type()' function.
+            # When input is a number that is not 1, low, or 2, high, the program will run the else statement.
+            else:
+                print(f"Please enter a number between {low} and {high}. ") # Letting the user know why their input did not work.
+        
+        # When the user does not enter either '1' or '2', the ValueError will print these error messages.
+        except ValueError:
+            print("That is not a valid number.")
+            print(f"Please enter a number between {low} and {high}. ")
+
+
 # WELCOME MESSAGE WITH RANDOMLY GENERATED NAME. ~~~~~~~~~~~~~~
 # This is a function for the welcome part of the main program.
 # This function is made to generate a random name from the 'names' list above, then print out a welcome message.
@@ -112,48 +146,41 @@ def order_type():
     del_click = "" # This variable is equal to default, empty, blank string.
     # This variable will change to 'clickandcollect' if 1 is entered.
     # This variable will change to 'delivery' if 2 is entered.
+    # Setting the variable 'LOW' to 1 and the variable 'HIGH' to 2.
+    # LOW and HIGH are capitals which means that they are constant.
+    # When they are constant, they do not change. They are literal.
+    # Using the 'LOW' parameter.
+    LOW = 1 # Set to literal 1.
+    # Using the 'HIGH' parameter.
+    HIGH = 2 # Set to literal 2.
+
+
+    # Asking the user to enter a number between 1 or 2 for testing.
+    # A variable called 'question'.
+    # Using 'f' to format the 'LOW' and 'HIGH' inside the '{}'.
+    question = (f"Please enter a number between {LOW} and {HIGH}. ")
+
+
     # Print statement that asks the user whether they want their order to be for Click & Collect or Delivery.
     print ("Do you want your order to be CLICK & COLLECT or DELIVERED to you?")
 
     # Separate Print Statement lines.
     print ("For CLICK & COLLECT, enter 1.") # Print statement asking the user to enter d for Delivery.
     print ("For DELIVERY, enter 2.") # Print statement asking the user to enter c for Click & Collect.
-
-
-    # The 'while True' loop will create an infinite loop.
-    while True:
-        try: # The try statement will catch and handle except statements.
-            # Asking the user to enter their option.
-            # The 'int' will make sure what the user inputs is an interger.
-            delivery = int(input("Please enter a valid number. ")) # The print statement prints and after this, the user enters their input.
-
-            # The 'and' combines these two conditions. Both conditions must be true for the whole expression to be true.
-            # First condition checks if the delivery is an integer that is greater than or equal to 1.
-            # Second condition checks if the delivery is an integer that is less than or equal to 2.
-            # If both conditions are met, then the program will run either of the if or elif statement.
-            # If both or either of the conditions are not met, then the program will skip the if or elif statements and skip to the next part of the code.
-            if delivery >= 1 and delivery <= 2:
-                if delivery == 1: # Checking if what is entered is '1'.
-                    print ("Click & Collect") # If '1' is entered, 'Click & Collect' will be printed.
-                    # If Click & Collect is chosen, then the variable, 'del_click', will equal to "clickandcollect".
-                    del_click = "clickandcollect" # This will change the 'del_click' variable.
-                    clickandcollect_info() # Will run the clickandcollect() function.
-                    break
-                elif delivery == 2: # Checking if what is entered is '2'.
-                    print ("Delivery") # If '2' is entered, 'Delivery' will be printed.
-                    # If Delivery is chosen, then the variable, 'del_click', will equal to "delivery".
-                    delivery_info() # Will run the delivery() function.
-                    del_click = "delivery" # This will change the 'del_click' variable.
-                    break # Once the input satisfies this point of the code, the program will break out of this while loop.
-            
-            # When input is a number that is not 1 or 2, the program will run the else statement.
-            else:
-                print("The number you enter must be 1 or 2.") # Letting the user know why their input did not work.
-        
-        # When the user does not enter either '1' or '2', the ValueError will print these error messages.
-        except ValueError:
-            print("That is not a valid number.")
-            print("Please enter 1 or 2.")
+    # Asking the user to enter their option.
+    # The 'int' will make sure what the user inputs is an integer.
+    delivery = val_int(LOW, HIGH, question)
+    if delivery == 1: # Checking if what is entered is '1'.
+        print ("Click & Collect") # If '1' is entered, 'Click & Collect' will be printed.
+        # If Click & Collect is chosen, then the variable, 'del_click', will equal to "clickandcollect".
+        del_click = "clickandcollect" # This will change the 'del_click' variable.
+        clickandcollect_info() # Will run the clickandcollect() function.
+    # Only other valid option will be 2.
+    else:
+        print ("Delivery") # If '2' is entered, 'Delivery' will be printed.
+        # If Delivery is chosen, then the variable, 'del_click', will equal to "delivery".
+        delivery_info() # Will run the delivery() function.
+        del_click = "delivery" # This will change the 'del_click' variable.
     return del_click # This will return the 'del_click' variable back down to the main() function at 'del_click = order_type()'.
 
 
