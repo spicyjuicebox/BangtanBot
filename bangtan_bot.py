@@ -13,7 +13,15 @@ import random # Importing the random module. Provides function for generating ra
 from random import randint # Choosing random integer.
 
 
-# Constants found here.
+# CONSTANTS found here. ~~~~~~~~~~~~~~
+# These LOW and HIGH constants are now available to every function when brought out of the other functions and up here.
+# Setting the variable 'LOW' to 1 and the variable 'HIGH' to 2.
+# LOW and HIGH are capitals which means that they are constant.
+# When they are constant, they do not change. They are literal.
+# Using the 'LOW' parameter.
+LOW = 1 # Set to literal 1.
+# Using the 'HIGH' parameter.
+HIGH = 2 # Set to literal 2.
 
 
 # LISTS found here. ~~~~~~~~~~~~~~
@@ -147,13 +155,6 @@ def order_type():
     del_click = "" # This variable is equal to default, empty, blank string.
     # This variable will change to 'clickandcollect' if 1 is entered.
     # This variable will change to 'delivery' if 2 is entered.
-    # Setting the variable 'LOW' to 1 and the variable 'HIGH' to 2.
-    # LOW and HIGH are capitals which means that they are constant.
-    # When they are constant, they do not change. They are literal.
-    # Using the 'LOW' parameter.
-    LOW = 1 # Set to literal 1.
-    # Using the 'HIGH' parameter.
-    HIGH = 2 # Set to literal 2.
 
 
     # Asking the user to enter a number between 1 or 2 for testing.
@@ -269,29 +270,27 @@ def order_album():
     # Ask for total number of albums for order.
     num_albums = 0 # This variable has the value of 0.
 
-    # Setting the variable 'LOW' to 1 and the variable 'HIGH' to 8.
-    # LOW and HIGH are capitals which means that they are constant.
+    # Setting the variable 'NUM_LOW' to 1 and the variable 'NUM_HIGH' to 8.
+    # NUM_LOW and NUM_HIGH are capitals which means that they are constant.
     # When they are constant, they do not change. They are literal.
-    # Using the 'LOW' parameter.
-    LOW = 1 # Set to literal 1.
-    # Using the 'HIGH' parameter.
-    HIGH = 8 # Set to literal 8.
-    # This is different to the other 'HIGH' variable being equal to 2.
+    NUM_LOW = 1 # Set to literal 1.
+    NUM_HIGH = 8 # Set to literal 8.
+
     MENU_LOW = 1 # Lowest number of available albums.
     MENU_HIGH = 15 # Highest number of available albums.
 
 
     # Asking the user to enter a number between 1 or 2 for testing.
     # A variable called 'question'.
-    # Using 'f' to format the 'LOW' and 'HIGH' inside the '{}'.
-    question = (f"Please enter a number between {LOW} and {HIGH}. ")
+    # Using 'f' to format the 'NUM_LOW' and 'NUM_HIGH' inside the '{}'.
+    question = (f"Please enter a number between {NUM_LOW} and {NUM_HIGH}. ")
 
     
     # Asking the user how many albums they want to order.
     print("How many albums do you want to order?")
     # The number of albums entered will go through the 'val_int()' function.
-    # 'LOW' is 1, 'HIGH" is 8, 'question' is "Please enter a number between 1 and 8. ".
-    num_albums = val_int(LOW, HIGH, question)
+    # 'NUM_LOW' is 1, 'NUM_HIGH" is 8, 'question' is "Please enter a number between 1 and 8. ".
+    num_albums = val_int(NUM_LOW, NUM_HIGH, question)
     # Choose album from the album list.
     # Used the 'for' statement to create a loop for the number of items that the user has chosen, found in num_albums.
     for item in range(num_albums): # Counting through how many albums have been chosen.
@@ -300,7 +299,7 @@ def order_album():
             print("Please choose the albums you would like to order by entering its corresponding number from the list provided. ")
             question = (f"Please enter a number between {MENU_LOW} and {MENU_HIGH}. ")
             album_ordered = val_int(MENU_LOW, MENU_HIGH, question)
-            # Bringing in the 'MENU_LOW', 1, 'MENU_HIGH', 8 and 'question', "Please enter a number between 1 and 8. "
+            # Bringing in the 'MENU_LOW', 1, 'MENU_HIGH', 15 and 'question', "Please enter a number between 1 and 15. "
 
 
             album_ordered = album_ordered -1 # The program will subtract 1 from the entered number of albums that the user wants to order. This is to match the index number of the album list.
@@ -362,15 +361,6 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
 # Ability to cancel the current order or to proceed with a new order.
 def confirm_cancel(del_click): # Paramter used to bring in the variable, 'del_click' into this function of 'confirm_cancel()' to check if the order is for Click and Collect or Delivery.
     # The CONFIRM or CANCEL order options.
-
-
-    # Setting the variable 'LOW' to 1 and the variable 'HIGH' to 2.
-    # LOW and HIGH are capitals which means that they are constant.
-    # When they are constant, they do not change. They are literal.
-    # Using the 'LOW' parameter.
-    LOW = 1 # Set to literal 1.
-    # Using the 'HIGH' parameter.
-    HIGH = 2 # Set to literal 2.
 
 
     # Asking the user to enter a number between 1 or 2 for testing.
