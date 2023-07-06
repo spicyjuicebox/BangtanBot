@@ -1,3 +1,5 @@
+# Defining the function, check_phone().
+# This function will be using parameters.
 def check_phone(ph_low, ph_high, question):
     # Bringing in the variable, 'question', into the function.
     # Bringing in the variable, 'ph_low', for 8, into the function.

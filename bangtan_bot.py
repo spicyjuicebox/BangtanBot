@@ -23,6 +23,13 @@ LOW = 1 # Set to literal 1.
 # Using the 'HIGH' parameter.
 HIGH = 2 # Set to literal 2.
 
+# The pohone numbers in New Zealand are generally 8 to 11 digits long.
+# The program should check if the phone number being entered is only ranging and including from 8 to 11 digits long.
+# Setting the variables.
+# These are parameters, they are used in the function, 'check_phone()'.
+PH_LOW = 8 # Lowest amount of digits allowed to be entered.
+PH_HIGH = 11 # Highest amount of digits allowed to be entered.
+
 
 # LISTS found here. ~~~~~~~~~~~~~~
 # LIST OF RANDOM NAMES. ~~~~~~~~~~~~~~
@@ -134,6 +141,41 @@ def val_int(low, high, question): # Parameter, using three variables in the func
             print(f"Please enter a number between {low} and {high}. ")
 
 
+# VALIDATION found here. ~~~~~~~~~~~~~~
+# Validating if the input for the phone number is all integers.
+# Defining the function, check_phone().
+# This function will be using parameters.
+def check_phone(PH_LOW, PH_HIGH, question):
+    # Bringing in the variable, 'question', into the function.
+    # Bringing in the variable, 'PH_LOW', for 8, into the function.
+    # Bringing in the variable, 'PH_HIGH', for 11, into the function.
+    # Starting a loop.
+    while True:
+        try: # Trying if the input is an integer.
+            # Setting a variable called, 'num' for the phone number input.
+            num = int(input(question)) # Bringing in the 'question' variable.
+            # The response to the question will be entered into the 'num' variable.
+            # Setting a variable called, 'test_num' to test the number input.
+            test_num = num
+            count = 0 # The 'count' counts through how many digits are in the input.
+            while test_num > 0:
+                # Taking the number and dividing the test_num by 11.
+                test_num = test_num//10
+                count = count + 1 # Adding 1 to the count variable.
+            # Setting up the two conditions in the 'if' statement.
+            if count >= PH_LOW and count <= PH_HIGH:
+                # Returning breaks out of the loop.
+                return str(num) # Made into a string because if not, the first digit being a 0 will be removed after printing.
+                # Leaving it as it is.
+            # If the input phone number is not between and including 8 to 11 digits, the error message will print.
+            else:
+                print("NZ phone numbers must be 8 to 11 digits long.")
+        # If the input phone number does not contain all numbers, the error message will print.\
+        except ValueError:
+            print("Please enter your phone number using only numbers.")
+            # Should go into a loop until valid input is entered.
+
+
 # WELCOME MESSAGE WITH RANDOMLY GENERATED NAME. ~~~~~~~~~~~~~~
 # This is a function for the welcome part of the main program.
 # This function is made to generate a random name from the 'names' list above, then print out a welcome message.
@@ -222,7 +264,7 @@ def clickandcollect_info():
     question = ("Please enter your phone number. ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details phone from the above function, bringing in the question.
-    customer_details['phone'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    customer_details['phone'] = check_phone(PH_LOW, PH_HIGH, question) # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
     print(customer_details['phone'])
     print(customer_details)
 
@@ -243,7 +285,7 @@ def delivery_info():
     question = ("Please enter your phone number. ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details phone from the above function, bringing in the question.
-    customer_details['phone'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    customer_details['phone'] = check_phone(PH_LOW, PH_HIGH, question) # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
     print(customer_details['phone'])
 
 
