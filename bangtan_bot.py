@@ -79,6 +79,28 @@ def not_blank(question): # This is a parameter. It brings variables ('question')
 
 
 # VALIDATION found here. ~~~~~~~~~~~~~~
+# Defining the function, check_string().
+# Using the 'isalpha' to check if the input is all alphabetical.
+def check_string(question): # Bringing in the variable, 'question', into the function.
+    while True:
+        # Using the variable, 'response'. This is a parameter.
+        response = input(question) # The answer to the question will go to the 'response' variable.
+        # Setting up the variable, 'x'.
+        x = response.isalpha()
+        # The 'isalpha' checks if the string is using the alphabet (alphabetical).
+        # Checking if the response is alphabetical or not.
+        # Checking if there are numbers or other characters being used in the response.
+
+        # If it is not alphabetical, run the 'if' statement.
+        if x == False:
+            print("Input must only contain letters.")
+            # Will continue to run the loop until correct input.
+        else:
+            return(response.title()) # The response will be printed and the first letter will be capitalised.
+# This function will be used whenever a function is asking for a name or for the user's address details (street name and suburb).
+
+
+# VALIDATION found here. ~~~~~~~~~~~~~~
 # Validating the menu for the user to choose either the Click & Collect or Delivery option.
 # Validating the inputs to check if they are an integer.
 # The function is asking the user for a number.
@@ -193,7 +215,7 @@ def clickandcollect_info():
     question = ("Please enter your name. ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'name'.
     # Getting the customer details name from the above function, bringing in the question.
-    customer_details['name'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    customer_details['name'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
     print(customer_details['name'])
 
 
@@ -214,7 +236,7 @@ def delivery_info():
     question = ("Please enter your name. ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'name'.
     # Getting the customer details name from the above function, bringing in the question.
-    customer_details['name'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    customer_details['name'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
     print(customer_details['name'])
 
 
@@ -235,14 +257,14 @@ def delivery_info():
     question = ("Please enter your street name. ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'street'.
     # Getting the customer details phone from the above function, bringing in the question.
-    customer_details['street'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    customer_details['street'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
     print(customer_details['street'])
 
 
     question = ("Please enter your suburb. ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'suburb'.
     # Getting the customer details phone from the above function, bringing in the question.
-    customer_details['suburb'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
+    customer_details['suburb'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
     print(customer_details['suburb'])
 
 
