@@ -1,9 +1,9 @@
 # Making sure that the input is a valid phone number.
 # Setting up the variable, 'question'.
-question = "Please enter your phone number. " # The 'question' variable is a parameter. It is used in the function,
+question = "Please enter your phone number. " # The 'question' variable is a parameter. It will be used in a function.
 
 
-# The pohone numbers in New Zealand are generally 8 to 11 digits long.
+# The phone numbers in New Zealand are generally 8 to 11 digits long.
 # The program should check if the phone number being entered is only ranging and including from 8 to 11 digits long.
 # Setting the variables.
 ph_low = 8 # Lowest amount of digits allowed to be entered.
