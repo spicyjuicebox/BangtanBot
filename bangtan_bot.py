@@ -394,6 +394,7 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
     elif del_click == "delivery":
         print("Your Order is for Delivery.")
         if len(order_list) >= 5: # Checking if 5 or more albums have been ordered.
+            # The 'len' counts the list.
             # If there are 5 or more items ordered, make a print statement saying that there is a delivery charge of $9.00.
             print("Since you have ordered 5 or more albums, there will be a $9.00 delivery charge.")
             total_cost += 9  # Adding the $9.00 delivery charge to the total cost.
