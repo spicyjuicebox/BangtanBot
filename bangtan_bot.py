@@ -10,7 +10,6 @@
 # IMPORT STATEMENTS found here. ~~~~~~~~~~~~~~
 import sys # Importing 'sys' is the function class for the 'sys.exit' so that it exits the program.
 import random # Importing the random module. Provides function for generating random numbers and choosing something random from the selection.
-import time # Importing 'time' will bring the library module, 'time' into the program. This will be useful for any time-related functions.
 from random import randint # Choosing random integer.
 
 
