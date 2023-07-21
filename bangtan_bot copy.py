@@ -195,7 +195,10 @@ def welcome(): # This new function is defined as 'welcome'.
     print("2.. 3.. Hello, we are BTS!")
     print("Thank you for choosing...")
     # The \033[95m" + will make the colour of the text in the print code to the colour purple.
-    print("\033[95m" + r"""
+    # The '38' indicates to the program that the text is going to change colour.
+    # The '2' indicates to the program that a custom RGB colour will be used.
+    # The '176;120;249' are the same values of the hex code, #B078F9.
+    print("\033[38;2;176;120;249m" + r"""
     _______      ____    ,---.   .--.  .-_'''-. ,---------.    ____    ,---.   .--.         _______       ,-----.  ,---------.  
     \  ____  \  .'  __ `. |    \  |  | '_( )_   \\          \ .'  __ `. |    \  |  |        \  ____  \   .'  .-,  '.\          \ 
     | |    \ | /   '  \  \|  ,  \ |  ||(_ o _)|  '`--.  ,---'/   '  \  \|  ,  \ |  |        | |    \ |  / ,-.|  \ _ \`--.  ,---' 
