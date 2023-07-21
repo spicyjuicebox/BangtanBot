@@ -177,6 +177,16 @@ def check_phone(PH_LOW, PH_HIGH, question):
             # Should go into a loop until valid input is entered.
 
 
+# LOADING PROGRAM ANIMATION. ~~~~~~~~~~~~~~
+# Defining the 'loading_animation()' function.
+#def loading_animation():
+    while True:
+        for i in range(4):
+            suffix = '.' * i if i < 3 else '...'
+            print("Loading Program" + suffix, end='\r', flush=True)
+            time.sleep(0.5)
+
+
 # WELCOME MESSAGE WITH RANDOMLY GENERATED NAME. ~~~~~~~~~~~~~~
 # This is a function for the welcome part of the main program.
 # This function is made to generate a random name from the 'names' list above, then print out a welcome message.
@@ -193,6 +203,15 @@ def welcome(): # This new function is defined as 'welcome'.
     num = randint(0,9) # 0 is the lower bound, 9 is the upper bound. Generates a random number between 0 and 9.
     name = (names[num]) # Accessing the 'names' list to assign each with a number from 'num'.
     # START PRINTING THE GREETING. ~~~~~~~~~~~~~~
+
+
+while True:
+    for i in range(4):
+        suffix = '.' * i if i < 3 else '...'
+        print("Loading Program" + suffix, end='\r', flush=True)
+        time.sleep(1)
+
+    
     print("2.. 3.. Hello, we are BTS!")
     print("Thank you for choosing...")
     # The \033[95m" + will make the colour of the text in the print code to the colour purple.
@@ -523,6 +542,8 @@ def main():
     Parameters: None.
     Returns: None.
     '''
+    # Calling the 'loading_animation()' function.
+    loading_animation()
     welcome() # Action being executed (the 'welcome()' function. Called within the 'main()' function.
     del_click = order_type() # Action being executed (the 'order_type()' function. Called within the 'main()' function.
     # 'del_click' is equal to what comes out of the function, 'order_type()'.
