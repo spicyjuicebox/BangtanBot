@@ -273,14 +273,14 @@ def order_type():
     # The 'int' will make sure what the user inputs is an integer.
     delivery = val_int(LOW, HIGH, question)
     if delivery == 1: # Checking if what is entered is '1'.
-        print ("Your Order Will Be For: Click & Collect") # If '1' is entered, 'Click & Collect' will be printed.
+        print ("    \033[1mYour Order Will Be For:\033[0m Click & Collect") # If '1' is entered, 'Click & Collect' will be printed.
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         # If Click & Collect is chosen, then the variable, 'del_click', will equal to "clickandcollect".
         del_click = "clickandcollect" # This will change the 'del_click' variable.
         clickandcollect_info() # Will run the clickandcollect() function.
     # Only other valid option will be 2.
     else:
-        print ("Your Order Will Be For: Delivery") # If '2' is entered, 'Delivery' will be printed.
+        print ("    \033[1mYour Order Will Be For:\033[0m Delivery") # If '2' is entered, 'Delivery' will be printed.
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         # If Delivery is chosen, then the variable, 'del_click', will equal to "delivery".
         delivery_info() # Will run the delivery() function.
@@ -409,7 +409,7 @@ def order_album():
             album_ordered = album_ordered -1 # The program will subtract 1 from the entered number of albums that the user wants to order. This is to match the index number of the album list.
             order_list.append(album_names[album_ordered]) # Picking out the album name from 'album_names' and is entered into the 'order_list'.
             order_cost.append(album_prices[album_ordered]) # Picking out the album price from 'album_prices' and is entered into the 'order_cost'.
-            print("    Album Chosen: {} \n                    \033[1m~ Price:\033[0m ${:.2f}" .format(album_names[album_ordered],album_prices[album_ordered]))
+            print("    \033[1mAlbum Chosen:\033[0m {} \n                    \033[1m~ Price:\033[0m ${:.2f}" .format(album_names[album_ordered],album_prices[album_ordered]))
             # The selected albums and their names and prices will be displayed through the format, "Album name $Album price".
             # The {:.2f} rounds them up into 2 decimal places or 2 floats. The 0 appears now.
             # The album_names[count] will retrieve the name of the album at the current index, 'count', from the 'album_names' list.
@@ -446,7 +446,8 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
     if del_click == "clickandcollect":
         print("     ❀ Your Order is for Click & Collect.")
         # Print statement that is used to display to the user the details of their order after being formatted.
-        print(f"     ❀ Customer Name: {customer_details['name']} \n     ❀ Customer Phone: {customer_details['phone']}")
+        print(f"     \033[1m❀ Customer Name:\033[0m {customer_details['name']} \n     \033[1m❀ Customer Phone:\033[0m {customer_details['phone']}")
+        #print(f"     ❀ Customer Name: {customer_details['name']} \n     ❀ Customer Phone: {customer_details['phone']}")
     # If the variable, 'del_click' is equal to 'delivery', the following will be printed.
     elif del_click == "delivery":
         print("     ❀ Your Order is for Delivery.")
@@ -458,7 +459,7 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
         #print("Since you have ordered 5 or more albums, there will be a $9.00 delivery charge.")
         #total_cost = total_cost + 9 # Adding the $9.00 delivery charge to the total cost of the order.
         # Print statement that is used to display to the user the details of their order after being formatted.
-        print(f"     ❀ Customer Name: {customer_details['name']} \n     ❀ Customer Phone: {customer_details['phone']} \n     ❀ Customer Address: {customer_details['house']} \n     ❀ Customer Street: {customer_details['street']} \n     ❀ Customer Suburb: {customer_details['suburb']}")
+        print(f"     \033[1m❀ Customer Name:\033[0m {customer_details['name']} \n     \033[1m❀ Customer Phone:\033[0m {customer_details['phone']} \n     \033[1m❀ Customer Address:\033[0m {customer_details['house']} \n     \033[1m❀ Customer Street:\033[0m {customer_details['street']} \n     \033[1m❀ Customer Suburb:\033[0m {customer_details['suburb']}")
         # The 'f' at the front is a way to format.
         # For the 'Customer Name' in {customer_details['name']}, it will have the inserted value of the 'name' key from the 'customer_details' dictionary list.
         # For the 'Customer Phone' in {customer_details['phone']}, it will have the inserted value of the 'phone' key from the 'customer_details' dictionary list.
@@ -470,7 +471,7 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
     count = 0 # 25.70 is at the position of 0.
     # The 'for' statement will create a loop that will go through each item in the 'order_list'.
     for item in order_list:
-        print("     ❀ Album Ordered: {}  ~~  Album Cost: ${:.2f}" .format(item, order_cost[count])) # Will print the formatted albums ordered and their corresponding price.
+        print("     ❀ \033[1mAlbum Ordered:\033[0m {}  \033[1m~~\033[0m  \033[1mAlbum Cost:\033[0m ${:.2f}" .format(item, order_cost[count])) # Will print the formatted albums ordered and their corresponding price.
         # The ':.2f' will round the cost of each ordered album to 2 decimal places.
         # The 'count' variable keeps track of the correct index in the 'order_cost' list.
         count = count+1 # Adding 1 to the 'count' variable so that next time, when the function picks out a different item, it will become a different number.
@@ -542,14 +543,14 @@ def new_exit():
     # Asking the user if they want to start another order or to exit the Bangtan Bot program.
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
     print ("Do you want to start another Order or Exit?")
-    print ("    ❀ To START ANOTHER ORDER, please enter 1.") # Input of 1 will make another order.
-    print ("    ❀ To EXIT the BOT, please enter 2.") # Input of 2 will exit the Bangtan Bot program.
+    print ("    ❀ To \033[1mSTART ANOTHER ORDER\033[0m, enter \033[1m1\033[0m.") # Input of 1 will make another order.
+    print ("    ❀ To \033[1mEXIT\033[0m, enter \033[1m2\033[0m.") # Input of 2 will exit the Bangtan Bot program.
 
     # 'LOW' is 1, 'HIGH" is 2, 'question' is "Please enter a number between 1 and 2. ".
     confirm = val_int(LOW, HIGH, question)
 
     if confirm == 1: # If 'confirm' is equal to 1, a new order will be made.
-        print ("You Chose to Create a New Order.\n\n\n\n") # Letting the user know that a new order will be made.
+        print ("\033[1m~~❀ You Chose to Create a New Order. ❀~~\033[0m\n\n\n\n") # Letting the user know that a new order will be made.
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         # Clearing the data from the current order from all lists.
         order_list.clear() # Clearing data from the list, 'order_list'.
@@ -575,7 +576,7 @@ def new_exit():
         main()
 
     elif confirm == 2: # If 'confirm' is equal to 2, the program will stop.
-        print ("You Chose to Exit the Program.") # Letting the user know that they will now exit out of the Bangtan Bot program.
+        print ("\033[1m~~❀ You Chose to Exit the Program. ❀~~\033[0m") # Letting the user know that they will now exit out of the Bangtan Bot program.
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         order_list.clear() # Clearing data from the list, 'order_list'.
         order_cost.clear() # Clearing data from the list, 'order_cost'.
