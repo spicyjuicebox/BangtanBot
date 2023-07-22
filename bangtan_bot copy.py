@@ -387,11 +387,11 @@ def order_album():
     # Asking the user to enter a number between 1 or 2 for testing.
     # A variable called 'question'.
     # Using 'f' to format the 'NUM_LOW' and 'NUM_HIGH' inside the '{}'.
-    question = (f"Please enter a number between {NUM_LOW} and {NUM_HIGH}. ")
+    question = (f"~ Please enter a number between {NUM_LOW} and {NUM_HIGH}.\n    Enter: ")
 
     
     # Asking the user how many albums they want to order.
-    print("How many albums do you want to order?")
+    print("\nHow many albums do you want to order?")
     # The number of albums entered will go through the 'val_int()' function.
     # 'NUM_LOW' is 1, 'NUM_HIGH" is 8, 'question' is "Please enter a number between 1 and 8. ".
     num_albums = val_int(NUM_LOW, NUM_HIGH, question)
@@ -400,8 +400,8 @@ def order_album():
     for item in range(num_albums): # Counting through how many albums have been chosen.
         # Another loop is made with the 'while' statement to ensure that the user can enter their chosen number.
         while num_albums > 0:
-            print("Please choose the albums you would like to order by entering its corresponding number from the list provided. ")
-            question = (f"Please enter a number between {MENU_LOW} and {MENU_HIGH}. ")
+            print("\nNow, choose the albums you would like to order by entering its corresponding number from the list provided.")
+            question = (f"~ Please enter a number between {MENU_LOW} and {MENU_HIGH}.\n    Enter: ")
             album_ordered = val_int(MENU_LOW, MENU_HIGH, question)
             # Bringing in the 'MENU_LOW', 1, 'MENU_HIGH', 15 and 'question', "Please enter a number between 1 and 15. "
 
@@ -409,7 +409,7 @@ def order_album():
             album_ordered = album_ordered -1 # The program will subtract 1 from the entered number of albums that the user wants to order. This is to match the index number of the album list.
             order_list.append(album_names[album_ordered]) # Picking out the album name from 'album_names' and is entered into the 'order_list'.
             order_cost.append(album_prices[album_ordered]) # Picking out the album price from 'album_prices' and is entered into the 'order_cost'.
-            print("{} ${:.2f}" .format(album_names[album_ordered],album_prices[album_ordered]))
+            print("    Album Chosen: {} \n                    ~ Price: ${:.2f}" .format(album_names[album_ordered],album_prices[album_ordered]))
             # The selected albums and their names and prices will be displayed through the format, "Album name $Album price".
             # The {:.2f} rounds them up into 2 decimal places or 2 floats. The 0 appears now.
             # The album_names[count] will retrieve the name of the album at the current index, 'count', from the 'album_names' list.
