@@ -317,35 +317,36 @@ def delivery_info():
     # This will go into the customer_details dictionary and it will have a variable name of 'name'.
     # Getting the customer details name from the above function, bringing in the question.
     customer_details['name'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
-    print(" Your Name Is: {}.\n" .format(customer_details['name']))
+    print("    Your Name Is: {}." .format(customer_details['name']))
 
 
-    question = ("\n~ Please enter your phone number. \n    Enter: ") # Displaying our question.
+    question = ("\n~ Please enter your phone number.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['phone'] = check_phone(PH_LOW, PH_HIGH, question) # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
-    print(" Your Phone Number Is: {}." .format(customer_details['phone']))
+    print("    Your Phone Number Is: {}." .format(customer_details['phone']))
 
 
-    question = ("\n  ~ Please enter your house number. ") # Displaying our question.
+    question = ("\n~ Please enter your house number.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'house'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['house'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
-    print(customer_details['house'])
+    print("    Your House Number Is: {}." .format(customer_details['house']))
 
 
-    question = ("Please enter your street name. ") # Displaying our question.
+    question = ("\n~ Please enter your street name.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'street'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['street'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
-    print(customer_details['street'])
+    print("    Your Street Name Is: {}." .format(customer_details['street']))
 
 
-    question = ("Please enter your suburb. ") # Displaying our question.
+    question = ("\n~ Please enter your suburb.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'suburb'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['suburb'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
-    print(customer_details['suburb'])
+    print("    Your Suburb Is: {}." .format(customer_details['suburb']))
+    print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
 
 # BTS ALBUMS. ~~~~~~~~~~~~~~
