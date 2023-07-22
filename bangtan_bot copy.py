@@ -223,7 +223,8 @@ def welcome(): # This new function is defined as 'welcome'.
     # START PRINTING THE GREETING. ~~~~~~~~~~~~~~
 
 
-    print("\033[1m\"2.. 3.. Hello, we are BTS!\"\033[0m")
+    print("\033[38;2;215;187;245m\033[1m\"2.. 3.. Hello, we are BTS!\"\033[0m")
+    #print("\033[1m\"2.. 3.. Hello, we are BTS!\"\033[0m")
     print("\nThank you for choosing...")
     # The \033[95m" + will make the colour of the text in the print code to the colour purple.
     # The '38' indicates to the program that the text is going to change colour.
@@ -243,8 +244,8 @@ def welcome(): # This new function is defined as 'welcome'.
     """ + "\033[0m") # The line of code, \033[0m" will ensure that the colour will only affect this print statement.
     # If I do not do the code above, then the other print statements underneath BANGTAN BOT will also be of the colour purple.
     print("We are a trusted program that will help you make online orders for BTS albums!")
-    print("My name is {}!". format(name)) # The '{}' will be replaced by what we have formatted, 'name', so that it is replaced with a randomly generated name from the list.
-    print("I will be here to help you make your online orders!\n")
+    print(" My name is {}!". format(name)) # The '{}' will be replaced by what we have formatted, 'name', so that it is replaced with a randomly generated name from the list.
+    print(" I will be here to help you make your online orders!\n")
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
 
@@ -264,23 +265,28 @@ def order_type():
 
     # Print statement that asks the user whether they want their order to be for Click & Collect or Delivery.
     #print ("Do you want your order to be CLICK & COLLECT or DELIVERED to you?\n")
-    print("Do you want your order to be \033[1mCLICK & COLLECT\033[0m or \033[1mDELIVERED\033[0m to you?\n")
+    print("Do you want your order to be \033[38;2;176;120;249m\033[1mCLICK & COLLECT\033[0m or \033[38;2;215;187;245m\033[1mDELIVERED\033[0m to you?\n")
+    #print("Do you want your order to be \033[1mCLICK & COLLECT\033[0m or \033[1mDELIVERED\033[0m to you?\n")
 
     # Separate Print Statement lines.
-    print ("    ❀ For \033[1mCLICK & COLLECT\033[0m, enter \033[1m1\033[0m.") # Print statement asking the user to enter d for Delivery.
-    print ("    ❀ For \033[1mDELIVERY\033[0m, enter \033[1m2\033[0m.") # Print statement asking the user to enter c for Click & Collect.
+    print ("    ❀ For \033[38;2;176;120;249m\033[1mCLICK & COLLECT\033[0m, enter \033[38;2;176;120;249m\033[1m1\033[0m.") # Print statement asking the user to enter d for Delivery.
+    #print ("    ❀ For \033[1mCLICK & COLLECT\033[0m, enter \033[1m1\033[0m.")
+    print ("    ❀ For \033[38;2;215;187;245m\033[1mDELIVERY\033[0m, enter \033[38;2;215;187;245m\033[1m2\033[0m.") # Print statement asking the user to enter c for Click & Collect.
+    #print ("    ❀ For \033[1mDELIVERY\033[0m, enter \033[1m2\033[0m.")
     # Asking the user to enter their option.
     # The 'int' will make sure what the user inputs is an integer.
     delivery = val_int(LOW, HIGH, question)
     if delivery == 1: # Checking if what is entered is '1'.
-        print ("    \033[1mYour Order Will Be For:\033[0m Click & Collect") # If '1' is entered, 'Click & Collect' will be printed.
+        print("    \033[1mYour Order Will Be For:\033[0m \033[38;2;176;120;249mClick and Collect\033[0m") # If '1' is entered, 'Click & Collect' will be printed.
+        #print ("    \033[1mYour Order Will Be For:\033[0m Click & Collect")
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         # If Click & Collect is chosen, then the variable, 'del_click', will equal to "clickandcollect".
         del_click = "clickandcollect" # This will change the 'del_click' variable.
         clickandcollect_info() # Will run the clickandcollect() function.
     # Only other valid option will be 2.
     else:
-        print ("    \033[1mYour Order Will Be For:\033[0m Delivery") # If '2' is entered, 'Delivery' will be printed.
+        print("    \033[1mYour Order Will Be For: \033[38;2;215;187;245mDelivery\033[0m") # If '2' is entered, 'Delivery' will be printed.
+        #print ("    \033[1mYour Order Will Be For:\033[0m Delivery")
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         # If Delivery is chosen, then the variable, 'del_click', will equal to "delivery".
         delivery_info() # Will run the delivery() function.
@@ -359,7 +365,9 @@ def albums():
     # The 'for' statement will create a loop that will start from 0 and will range through to the end of 'number_albums - 1' (from 0 to 14).
     print("\033[1mList of Albums Available:\033[0m\n")
     for count in range (number_albums): # Taking 0.
-        print("  {})  {} \n        \033[1m~ Price:\033[0m ${:.2f}\n" .format(count+1, album_names[count],album_prices[count])) # Prints out each of the album names and album prices by its integer.
+        print(" \033[38;2;176;120;249m{})\033[0m  {} \n        \033[38;2;155;240;189m~ Price: ${:.2f}\033[0m\n".format(count+1, album_names[count], album_prices[count])) # Prints out each of the album names and album prices by its integer.
+        #print("  {})  {} \n        \033[38;2;155;240;189m~ Price: ${:.2f}\033[0m\n".format(count+1, album_names[count], album_prices[count]))
+        #print("  {})  {} \n        \033[1m~ Price:\033[0m ${:.2f}\n" .format(count+1, album_names[count],album_prices[count]))
         # The {:.2f} rounds them up into 2 decimal places or 2 floats. The 0 appears now.
         # The count+1 will change the 2 Cool 4 Skool position from 0 to 1.
         # The album_names[count] will retrieve the name of the album at the current index, 'count', from the 'album_names' list.
@@ -441,7 +449,8 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
         break # Breaks out of the while loop so that the rest of the program can continue.
 
     total_cost = sum(order_cost)
-    print(" \033[1m~❀ Your Customer Details:\033[0m") # Letting the user know that was is going to be printed will be their customer details.
+    print(" \033[38;2;215;187;245m~❀ Your Customer Details:\033[0m") # Letting the user know that was is going to be printed will be their customer details.
+    #print(" \033[1m~❀ Your Customer Details:\033[0m")
     # If the variable, 'del_click' is equal to 'clickandcollect', the following will be printed.
     if del_click == "clickandcollect":
         print("     ❀ Your Order is for Click & Collect.")
@@ -467,7 +476,8 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
         # For the 'Customer Street' in {customer_details['street']}, it will have the inserted value of the 'street' key from the 'customer_details' dictionary list.
         # For the 'Customer Suburb' in {customer_details['suburb']}, it will have the inserted value of the 'suburb' key from the 'customer_details' dictionary list.
     print()
-    print(" \033[1m~❀ Your Order Details:\033[0m") # Letting the user know that was is going to be printed will be their order details.
+    print(" \033[38;2;215;187;245m~❀ Your Order Details:\033[0m") # Letting the user know that was is going to be printed will be their order details.
+    #print(" \033[1m~❀ Your Order Details:\033[0m")
     count = 0 # 25.70 is at the position of 0.
     # The 'for' statement will create a loop that will go through each item in the 'order_list'.
     for item in order_list:
@@ -476,7 +486,8 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
         # The 'count' variable keeps track of the correct index in the 'order_cost' list.
         count = count+1 # Adding 1 to the 'count' variable so that next time, when the function picks out a different item, it will become a different number.
     print()
-    print("\n \033[1m~~~~❀ Total Order Cost:\033[0m") # Letting the user know that was is going to be printed will be their total order details.
+    print(" \033[38;2;215;187;245m~❀ Total Order Cost:\033[0m") # Letting the user know that was is going to be printed will be their total order details.
+    #print("\n \033[1m~~~~❀ Total Order Cost:\033[0m")
     print(f"        ${total_cost:.2f}") # The ':.2f' will round the sum of the order to 2 decimal places.
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
