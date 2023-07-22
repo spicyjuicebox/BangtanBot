@@ -435,21 +435,21 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
             # When i = 2, the suffix is set to '..' ('..' will appear).
             # When i = 3, the suffix is set to '...' ('...' will appear). This will be the end of the sequence.
             suffix = '.' * i if i < 3 else '...'
-            # The program will print "Loading Program" and depending on the value of i, the program will print the number of dots after the message.
+            # The program will print "Printing Order Out" and depending on the value of i, the program will print the number of dots after the message.
             print("Printing Order Out" + suffix, end='\r', flush=True)
             time.sleep(0.5) # Each '.' will appear after each second due to the '(1)'.
         break # Breaks out of the while loop so that the rest of the program can continue.
 
     total_cost = sum(order_cost)
-    print("Your Customer Details:") # Letting the user know that was is going to be printed will be their customer details.
+    print(" ~❀ Your Customer Details:") # Letting the user know that was is going to be printed will be their customer details.
     # If the variable, 'del_click' is equal to 'clickandcollect', the following will be printed.
     if del_click == "clickandcollect":
-        print("Your Order is for Click & Collect.")
+        print("     ❀ Your Order is for Click & Collect.")
         # Print statement that is used to display to the user the details of their order after being formatted.
-        print(f"Customer Name: {customer_details['name']} \nCustomer Phone: {customer_details['phone']}")
+        print(f"     ❀ Customer Name: {customer_details['name']} \n     ❀ Customer Phone: {customer_details['phone']}")
     # If the variable, 'del_click' is equal to 'delivery', the following will be printed.
     elif del_click == "delivery":
-        print("Your Order is for Delivery.")
+        print("     ❀ Your Order is for Delivery.")
         if len(order_list) >= 5: # Checking if 5 or more albums have been ordered.
             # The 'len' counts the list.
             # If there are 5 or more items ordered, make a print statement saying that there is a delivery charge of $9.00.
@@ -466,17 +466,18 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
         # For the 'Customer Street' in {customer_details['street']}, it will have the inserted value of the 'street' key from the 'customer_details' dictionary list.
         # For the 'Customer Suburb' in {customer_details['suburb']}, it will have the inserted value of the 'suburb' key from the 'customer_details' dictionary list.
     print()
-    print("Your Order Details:") # Letting the user know that was is going to be printed will be their order details.
+    print(" ~❀ Your Order Details:") # Letting the user know that was is going to be printed will be their order details.
     count = 0 # 25.70 is at the position of 0.
     # The 'for' statement will create a loop that will go through each item in the 'order_list'.
     for item in order_list:
-        print("Ordered: {}  Cost: ${:.2f}" .format(item, order_cost[count])) # Will print the formatted albums ordered and their corresponding price.
+        print("     ❀ Album Ordered: {}  ~~  Album Cost: ${:.2f}" .format(item, order_cost[count])) # Will print the formatted albums ordered and their corresponding price.
         # The ':.2f' will round the cost of each ordered album to 2 decimal places.
         # The 'count' variable keeps track of the correct index in the 'order_cost' list.
         count = count+1 # Adding 1 to the 'count' variable so that next time, when the function picks out a different item, it will become a different number.
     print()
-    print("Total Order Cost") # Letting the user know that was is going to be printed will be their total order details.
-    print(f"${total_cost:.2f}") # The ':.2f' will round the sum of the order to 2 decimal places.
+    print("\n ~~~~❀ Total Order Cost") # Letting the user know that was is going to be printed will be their total order details.
+    print(f"        ${total_cost:.2f}") # The ':.2f' will round the sum of the order to 2 decimal places.
+    print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
 
 # CONFIRM OR CANCEL THE ORDER. ~~~~~~~~~~~~~~
