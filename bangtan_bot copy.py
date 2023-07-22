@@ -180,11 +180,11 @@ def check_phone(PH_LOW, PH_HIGH, question):
 # LOADING PROGRAM ANIMATION. ~~~~~~~~~~~~~~
 # Defining the 'loading_animation()' function.
 #def loading_animation():
-    while True:
-        for i in range(4):
-            suffix = '.' * i if i < 3 else '...'
-            print("Loading Program" + suffix, end='\r', flush=True)
-            time.sleep(0.5)
+    #while True:
+        #for i in range(4):
+            #suffix = '.' * i if i < 3 else '...'
+            #print("Loading Program" + suffix, end='\r', flush=True)
+            #time.sleep(0.5)
 
 
 # WELCOME MESSAGE WITH RANDOMLY GENERATED NAME. ~~~~~~~~~~~~~~
@@ -200,16 +200,27 @@ def welcome(): # This new function is defined as 'welcome'.
     Parameters: None.
     Returns: None.
     '''
+
+    #Starting a while loop.
+    while True:
+        # The 'for' loop is used to iterate over a sequence of 4 elements using the 'range(4)' function, generating sequence between, and including, 0 to 3.
+        # The 'i' takes in the variables of 0, 1, 2 and 3.
+        for i in range(4): # The loop will go through 4 times. Once the process is done, it will break out of the loop.
+            # Setting the suffix for the dots to appear.
+            # When i = 0, so the string is empty (no '.' will appear).
+            # When i = 1, the suffix is set to '.' ('.' will appear).
+            # When i = 2, the suffix is set to '..' ('..' will appear).
+            # When i = 3, the suffix is set to '...' ('...' will appear). This will be the end of the sequence.
+            suffix = '.' * i if i < 3 else '...'
+            # The program will print "Loading Program" and depending on the value of i, the program will print the number of dots after the message.
+            print("Loading Program" + suffix, end='\r', flush=True)
+            time.sleep(1) # Each '.' will appear after each second due to the '(1)'.
+        break # Breaks out of the while loop so that the rest of the program can continue.
+    
+    
     num = randint(0,9) # 0 is the lower bound, 9 is the upper bound. Generates a random number between 0 and 9.
     name = (names[num]) # Accessing the 'names' list to assign each with a number from 'num'.
     # START PRINTING THE GREETING. ~~~~~~~~~~~~~~
-
-
-while True:
-    for i in range(4):
-        suffix = '.' * i if i < 3 else '...'
-        print("Loading Program" + suffix, end='\r', flush=True)
-        time.sleep(1)
 
     
     print("2.. 3.. Hello, we are BTS!")
@@ -542,8 +553,6 @@ def main():
     Parameters: None.
     Returns: None.
     '''
-    # Calling the 'loading_animation()' function.
-    loading_animation()
     welcome() # Action being executed (the 'welcome()' function. Called within the 'main()' function.
     del_click = order_type() # Action being executed (the 'order_type()' function. Called within the 'main()' function.
     # 'del_click' is equal to what comes out of the function, 'order_type()'.
