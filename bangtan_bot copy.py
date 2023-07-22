@@ -134,12 +134,12 @@ def val_int(low, high, question): # Parameter, using three variables in the func
                 # Will return the number back to the 'delivery' variable in the 'order_type()' function.
             # When input is a number that is not 1, low, or 2, high, the program will run the else statement.
             else:
-                print(f"Please enter a number between {low} and {high}. ") # Letting the user know why their input did not work.
+                print(f"Your number should have been between {low} and {high}. ") # Letting the user know why their input did not work.
         
         # When the user does not enter either '1' or '2', the ValueError will print these error messages.
         except ValueError:
             print("That is not a valid number.")
-            print(f"Please enter a number between {low} and {high}. ")
+            print(f"Your number should have been between {low} and {high}. ")
 
 
 # VALIDATION found here. ~~~~~~~~~~~~~~
@@ -224,8 +224,8 @@ def welcome(): # This new function is defined as 'welcome'.
 
 
     print("\"2.. 3.. Hello, we are BTS!\"")
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
-    print("Thank you for choosing...")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬")
+    print("\nThank you for choosing...")
     # The \033[95m" + will make the colour of the text in the print code to the colour purple.
     # The '38' indicates to the program that the text is going to change colour.
     # The '2' indicates to the program that a custom RGB colour will be used.
@@ -245,8 +245,8 @@ def welcome(): # This new function is defined as 'welcome'.
     # If I do not do the code above, then the other print statements underneath BANGTAN BOT will also be of the colour purple.
     print("We are a trusted program that will help you make online orders for BTS albums!")
     print("My name is {}!". format(name)) # The '{}' will be replaced by what we have formatted, 'name', so that it is replaced with a randomly generated name from the list.
-    print("I will be here to help you make your online orders!")
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+    print("I will be here to help you make your online orders!\n")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
 
 # MENU FOR CLICK & COLLECT/DELIVERY. ~~~~~~~~~~~~~~
@@ -273,13 +273,15 @@ def order_type():
     # The 'int' will make sure what the user inputs is an integer.
     delivery = val_int(LOW, HIGH, question)
     if delivery == 1: # Checking if what is entered is '1'.
-        print ("Click & Collect") # If '1' is entered, 'Click & Collect' will be printed.
+        print ("Your Order Will Be For: Click & Collect") # If '1' is entered, 'Click & Collect' will be printed.
+        print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         # If Click & Collect is chosen, then the variable, 'del_click', will equal to "clickandcollect".
         del_click = "clickandcollect" # This will change the 'del_click' variable.
         clickandcollect_info() # Will run the clickandcollect() function.
     # Only other valid option will be 2.
     else:
-        print ("Delivery") # If '2' is entered, 'Delivery' will be printed.
+        print ("Your Order Will Be For: Delivery") # If '2' is entered, 'Delivery' will be printed.
+        print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         # If Delivery is chosen, then the variable, 'del_click', will equal to "delivery".
         delivery_info() # Will run the delivery() function.
         del_click = "delivery" # This will change the 'del_click' variable.
@@ -290,19 +292,20 @@ def order_type():
 # Question (variable) comes from here.
 # Defining the function, 'clickandcollect()' for the click and collect component of the main program.
 def clickandcollect_info():
-    question = ("Please enter your name. ") # Displaying our question.
+    question = ("Please enter your name. \n  Enter:  ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'name'.
     # Getting the customer details name from the above function, bringing in the question.
     customer_details['name'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
-    print(customer_details['name'])
+    print("Your Name Is: {}.\nNice to meet you!" .format(customer_details['name']))
 
 
-    question = ("Please enter your phone number. ") # Displaying our question.
+    question = ("\nPlease enter your phone number. \n  Enter:  ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['phone'] = check_phone(PH_LOW, PH_HIGH, question) # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
-    print(customer_details['phone'])
-    print(customer_details)
+    print("Your Phone Number Is: {}." .format(customer_details['phone']))
+    print("\nYour Customer Details: \n    ~~ {}" .format(customer_details))
+    print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
 
 # DELIVERY INFORMATION. ~~~~~~~~~~~~~~
