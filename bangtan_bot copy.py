@@ -83,7 +83,7 @@ def not_blank(question): # This is a parameter. It brings variables ('question')
         # When the condition for the 'if' statement is false, the program will skip to the 'else' code.
         else:
             # The 'else' statement will print this line of code.
-            print("This cannot be blank.")
+            print("\n ~! This cannot be blank.\n")
 
 
 # VALIDATION found here. ~~~~~~~~~~~~~~
@@ -101,7 +101,7 @@ def check_string(question): # Bringing in the variable, 'question', into the fun
 
         # If it is not alphabetical, run the 'if' statement.
         if x == False:
-            print("Input must only contain letters.")
+            print("\n ~! Input must only contain letters.\n")
             # Will continue to run the loop until correct input.
         else:
             return(response.title()) # The response will be printed and the first letter will be capitalised.
@@ -134,12 +134,12 @@ def val_int(low, high, question): # Parameter, using three variables in the func
                 # Will return the number back to the 'delivery' variable in the 'order_type()' function.
             # When input is a number that is not 1, low, or 2, high, the program will run the else statement.
             else:
-                print(f"Your number should have been between {low} and {high}. ") # Letting the user know why their input did not work.
+                print(f"\n ~! Your number should have been between {low} and {high}.\n") # Letting the user know why their input did not work.
         
         # When the user does not enter either '1' or '2', the ValueError will print these error messages.
         except ValueError:
-            print("That is not a valid number.")
-            print(f"Your number should have been between {low} and {high}. ")
+            print("\n ~! That is not a valid number.")
+            print(f"\n ~! Your number should have been between {low} and {high}.\n")
 
 
 # VALIDATION found here. ~~~~~~~~~~~~~~
@@ -170,10 +170,10 @@ def check_phone(PH_LOW, PH_HIGH, question):
                 # Leaving it as it is.
             # If the input phone number is not between and including 8 to 11 digits, the error message will print.
             else:
-                print("NZ phone numbers must be 8 to 11 digits long.")
+                print("\n ~! NZ phone numbers must be 8 to 11 digits long.")
         # If the input phone number does not contain all numbers, the error message will print.\
         except ValueError:
-            print("Please enter your phone number using only numbers.")
+            print("\n ~! Please enter your phone number using only numbers.")
             # Should go into a loop until valid input is entered.
 
 
@@ -295,7 +295,7 @@ def clickandcollect_info():
     question = ("~ Please enter your name.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'name'.
     # Getting the customer details name from the above function, bringing in the question.
-    customer_details['name'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
+    customer_details['name'] = check_string(question)# Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
     print("    Your Name Is: {}." .format(customer_details['name']))
 
 
