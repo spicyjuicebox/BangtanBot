@@ -400,7 +400,7 @@ def order_album():
     for item in range(num_albums): # Counting through how many albums have been chosen.
         # Another loop is made with the 'while' statement to ensure that the user can enter their chosen number.
         while num_albums > 0:
-            print("\nNow, choose the albums you would like to order by entering its corresponding number from the list provided.")
+            print("\nChoose the album you would like to order by entering its corresponding number from the list provided.")
             question = (f"~ Please enter a number between {MENU_LOW} and {MENU_HIGH}.\n    Enter: ")
             album_ordered = val_int(MENU_LOW, MENU_HIGH, question)
             # Bringing in the 'MENU_LOW', 1, 'MENU_HIGH', 15 and 'question', "Please enter a number between 1 and 15. "
@@ -422,12 +422,29 @@ def order_album():
 # This will be included if order is for delivery or for click and collect and names and price of each album - total cost including any delivery charge.
 # Defining the function, 'print_order()'.
 def print_order(del_click): # Parameter used. The variable, 'del_click' is brought into the function, 'print_order()' and it used within it.
-    print()
+    print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
+
+    #Starting a while loop.
+    while True:
+        # The 'for' loop is used to iterate over a sequence of 4 elements using the 'range(4)' function, generating sequence between, and including, 0 to 3.
+        # The 'i' takes in the variables of 0, 1, 2 and 3.
+        for i in range(4): # The loop will go through 4 times. Once the process is done, it will break out of the loop.
+            # Setting the suffix for the dots to appear.
+            # When i = 0, so the string is empty (no '.' will appear).
+            # When i = 1, the suffix is set to '.' ('.' will appear).
+            # When i = 2, the suffix is set to '..' ('..' will appear).
+            # When i = 3, the suffix is set to '...' ('...' will appear). This will be the end of the sequence.
+            suffix = '.' * i if i < 3 else '...'
+            # The program will print "Loading Program" and depending on the value of i, the program will print the number of dots after the message.
+            print("Printing Order Out" + suffix, end='\r', flush=True)
+            time.sleep(0.5) # Each '.' will appear after each second due to the '(1)'.
+        break # Breaks out of the while loop so that the rest of the program can continue.
+
     total_cost = sum(order_cost)
-    print("Your Customer Details") # Letting the user know that was is going to be printed will be their customer details.
+    print("Your Customer Details:") # Letting the user know that was is going to be printed will be their customer details.
     # If the variable, 'del_click' is equal to 'clickandcollect', the following will be printed.
     if del_click == "clickandcollect":
-        print("Your Order is for Click and Collect.")
+        print("Your Order is for Click & Collect.")
         # Print statement that is used to display to the user the details of their order after being formatted.
         print(f"Customer Name: {customer_details['name']} \nCustomer Phone: {customer_details['phone']}")
     # If the variable, 'del_click' is equal to 'delivery', the following will be printed.
@@ -449,7 +466,7 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
         # For the 'Customer Street' in {customer_details['street']}, it will have the inserted value of the 'street' key from the 'customer_details' dictionary list.
         # For the 'Customer Suburb' in {customer_details['suburb']}, it will have the inserted value of the 'suburb' key from the 'customer_details' dictionary list.
     print()
-    print("Your Order Details") # Letting the user know that was is going to be printed will be their order details.
+    print("Your Order Details:") # Letting the user know that was is going to be printed will be their order details.
     count = 0 # 25.70 is at the position of 0.
     # The 'for' statement will create a loop that will go through each item in the 'order_list'.
     for item in order_list:
