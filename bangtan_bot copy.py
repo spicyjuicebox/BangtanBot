@@ -494,15 +494,18 @@ def confirm_cancel(del_click): # Paramter used to bring in the variable, 'del_cl
 
 
     print ("Please confirm your order.\n")
-    print ("    ❀ To \033[1mCONFIRM\033[0m, enter \033[1m1\033[0m.") # Letting the user know that entering 1 will CONFIRM their order.
-    print ("    ❀ To \033[1mCANCEL\033[0m, enter \033[1m2\033[0m.") # Letting the user know that entering 2 will CANCEL their order.
+    print("    ❀ To \033[38;2;155;240;189mCONFIRM\033[0m, enter \033[38;2;155;240;189m1\033[0m.") # Letting the user know that entering 1 will CONFIRM their order.
+    #print ("    ❀ To \033[1mCONFIRM\033[0m, enter \033[1m1\033[0m.")
+    print("    ❀ To \033[38;2;255;116;116mCANCEL\033[0m, enter \033[38;2;255;116;116m2\033[0m.") # Letting the user know that entering 2 will CANCEL their order.
+    #print ("    ❀ To \033[1mCANCEL\033[0m, enter \033[1m2\033[0m.")
 
     # 'LOW' is 1, 'HIGH" is 2, 'question' is "Please enter a number between 1 and 2. ".
     confirm = val_int(LOW, HIGH, question)
 
     if confirm == 1: # If 'confirm' is equal to 1, the order is confirmed.
         # Letting the user know that the order has been confirmed.
-        print("\n\033[1m~~❀ Your Order has been Confirmed. ❀~~\033[0m")
+        print("\033[38;2;155;240;189m\033[1m~~❀ Your Order has been Confirmed. ❀~~\033[0m")
+        #print("\n\033[1m~~❀ Your Order has been Confirmed. ❀~~\033[0m")
         if del_click == "clickandcollect": # Bringing in the parameter of 'del_click' checks if Click and Collect was chosen.
             # Print statement printed only when click and collect was chosen.
             print("    You will receive a text message shortly to know when your order is ready to click and collect.")
@@ -515,7 +518,8 @@ def confirm_cancel(del_click): # Paramter used to bring in the variable, 'del_cl
 
     elif confirm == 2: # If 'confirm' is equal to 2, the order is cancelled.
         # Letting the user know that the order has been cancelled.
-        print("\n\033[1m~~❀ Your Order has been Cancelled. ❀~~\033[0m")
+        print("\033[38;2;255;116;116m\033[1m~~❀ Your Order has been Cancelled. ❀~~\033[0m")
+        #print("\n\033[1m~~❀ Your Order has been Cancelled. ❀~~\033[0m")
         print("    You can RESTART your order or EXIT the Bangtan Bot.")
         new_exit() # The function of starting a new order to exiting out of the Bangtan Bot program will run after cancelling.
         # When input is a number that is not 1 or 2.
@@ -543,14 +547,17 @@ def new_exit():
     # Asking the user if they want to start another order or to exit the Bangtan Bot program.
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
     print ("Do you want to start another Order or Exit?")
-    print ("    ❀ To \033[1mSTART ANOTHER ORDER\033[0m, enter \033[1m1\033[0m.") # Input of 1 will make another order.
-    print ("    ❀ To \033[1mEXIT\033[0m, enter \033[1m2\033[0m.") # Input of 2 will exit the Bangtan Bot program.
+    print("    ❀ To \033[38;2;155;240;189mSTART ANOTHER ORDER\033[0m, enter \033[38;2;155;240;189m1\033[0m.") # Input of 1 will make another order.
+    #print ("    ❀ To \033[1mSTART ANOTHER ORDER\033[0m, enter \033[1m1\033[0m.")
+    print("    ❀ To \033[38;2;255;116;116mEXIT\033[0m, enter \033[38;2;255;116;116m2\033[0m.") # Input of 2 will exit the Bangtan Bot program.
+    #print ("    ❀ To \033[1mEXIT\033[0m, enter \033[1m2\033[0m.")
 
     # 'LOW' is 1, 'HIGH" is 2, 'question' is "Please enter a number between 1 and 2. ".
     confirm = val_int(LOW, HIGH, question)
 
     if confirm == 1: # If 'confirm' is equal to 1, a new order will be made.
-        print ("\033[1m~~❀ You Chose to Create a New Order. ❀~~\033[0m\n\n\n\n") # Letting the user know that a new order will be made.
+        print("\033[38;2;155;240;189m\033[1m~~❀ You Chose to Create a New Order. ❀~~\033[0m\n\n\n\n") # Letting the user know that a new order will be made.
+        #print ("\033[1m~~❀ You Chose to Create a New Order. ❀~~\033[0m\n\n\n\n")
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         # Clearing the data from the current order from all lists.
         order_list.clear() # Clearing data from the list, 'order_list'.
@@ -576,7 +583,8 @@ def new_exit():
         main()
 
     elif confirm == 2: # If 'confirm' is equal to 2, the program will stop.
-        print ("\033[1m~~❀ You Chose to Exit the Program. ❀~~\033[0m") # Letting the user know that they will now exit out of the Bangtan Bot program.
+        print("\033[38;2;255;116;116m\033[1m~~❀ You Chose to Exit the Program. ❀~~\033[0m") # Letting the user know that they will now exit out of the Bangtan Bot program.
+        #print ("\033[1m~~❀ You Chose to Exit the Program. ❀~~\033[0m")
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         order_list.clear() # Clearing data from the list, 'order_list'.
         order_cost.clear() # Clearing data from the list, 'order_cost'.
