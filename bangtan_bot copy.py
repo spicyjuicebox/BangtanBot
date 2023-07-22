@@ -357,8 +357,9 @@ def albums():
     number_albums = 15 # This is the total number of albums that the bot will be selling.
 
     # The 'for' statement will create a loop that will start from 0 and will range through to the end of 'number_albums - 1' (from 0 to 14).
+    print("List of Albums Available:\n")
     for count in range (number_albums): # Taking 0.
-        print("{} {} ${:.2f}" .format(count+1, album_names[count],album_prices[count])) # Prints out each of the album names and album prices by its integer.
+        print("  {})  {} \n        ~ Price: ${:.2f}\n" .format(count+1, album_names[count],album_prices[count])) # Prints out each of the album names and album prices by its integer.
         # The {:.2f} rounds them up into 2 decimal places or 2 floats. The 0 appears now.
         # The count+1 will change the 2 Cool 4 Skool position from 0 to 1.
         # The album_names[count] will retrieve the name of the album at the current index, 'count', from the 'album_names' list.
