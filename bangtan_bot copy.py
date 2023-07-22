@@ -304,7 +304,6 @@ def clickandcollect_info():
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['phone'] = check_phone(PH_LOW, PH_HIGH, question) # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
     print("Your Phone Number Is: {}." .format(customer_details['phone']))
-    print("\nYour Customer Details: \n    ~~ {}" .format(customer_details))
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
 
