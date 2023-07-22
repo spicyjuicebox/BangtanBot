@@ -224,7 +224,6 @@ def welcome(): # This new function is defined as 'welcome'.
 
 
     print("\"2.. 3.. Hello, we are BTS!\"")
-    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬")
     print("\nThank you for choosing...")
     # The \033[95m" + will make the colour of the text in the print code to the colour purple.
     # The '38' indicates to the program that the text is going to change colour.
@@ -549,18 +548,54 @@ def new_exit():
     confirm = val_int(LOW, HIGH, question)
 
     if confirm == 1: # If 'confirm' is equal to 1, a new order will be made.
-        print ("New Order") # Letting the user know that a new order will be made.
+        print ("You Chose to Create a New Order.\n\n\n\n") # Letting the user know that a new order will be made.
+        print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         # Clearing the data from the current order from all lists.
         order_list.clear() # Clearing data from the list, 'order_list'.
         order_cost.clear() # Clearing data from the list, 'order_cost'.
         customer_details.clear() # Clearing data from the list, 'customer_details'.
+
+        #Starting a while loop.
+        while True:
+            # The 'for' loop is used to iterate over a sequence of 4 elements using the 'range(4)' function, generating sequence between, and including, 0 to 3.
+            # The 'i' takes in the variables of 0, 1, 2 and 3.
+            for i in range(4): # The loop will go through 4 times. Once the process is done, it will break out of the loop.
+                # Setting the suffix for the dots to appear.
+                # When i = 0, so the string is empty (no '.' will appear).
+                # When i = 1, the suffix is set to '.' ('.' will appear).
+                # When i = 2, the suffix is set to '..' ('..' will appear).
+                # When i = 3, the suffix is set to '...' ('...' will appear). This will be the end of the sequence.
+                suffix = '.' * i if i < 3 else '...'
+                # The program will print "Starting New Order" and depending on the value of i, the program will print the number of dots after the message.
+                print("Starting New Order" + suffix, end='\r', flush=True)
+                time.sleep(0.5) # Each '.' will appear after each second due to the '(1)'.
+            break # Breaks out of the while loop so that the rest of the program can continue.
+
         main()
 
     elif confirm == 2: # If 'confirm' is equal to 2, the program will stop.
-        print ("Exit") # Letting the user know that they will now exit out of the Bangtan Bot program.
+        print ("You Chose to Exit the Program.") # Letting the user know that they will now exit out of the Bangtan Bot program.
+        print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         order_list.clear() # Clearing data from the list, 'order_list'.
         order_cost.clear() # Clearing data from the list, 'order_cost'.
         customer_details.clear() # Clearing data from the list, 'customer_details'.
+
+        #Starting a while loop.
+        while True:
+            # The 'for' loop is used to iterate over a sequence of 4 elements using the 'range(4)' function, generating sequence between, and including, 0 to 3.
+            # The 'i' takes in the variables of 0, 1, 2 and 3.
+            for i in range(4): # The loop will go through 4 times. Once the process is done, it will break out of the loop.
+                # Setting the suffix for the dots to appear.
+                # When i = 0, so the string is empty (no '.' will appear).
+                # When i = 1, the suffix is set to '.' ('.' will appear).
+                # When i = 2, the suffix is set to '..' ('..' will appear).
+                # When i = 3, the suffix is set to '...' ('...' will appear). This will be the end of the sequence.
+                suffix = '.' * i if i < 3 else '...'
+                # The program will print "Exiting Program" and depending on the value of i, the program will print the number of dots after the message.
+                print("Exiting Program" + suffix, end='\r', flush=True)
+                time.sleep(0.5) # Each '.' will appear after each second due to the '(1)'.
+            break # Breaks out of the while loop so that the rest of the program can continue.
+
         sys.exit() # Exiting out of the program.
 
 
