@@ -223,7 +223,7 @@ def welcome(): # This new function is defined as 'welcome'.
     # START PRINTING THE GREETING. ~~~~~~~~~~~~~~
 
 
-    print("\"2.. 3.. Hello, we are BTS!\"")
+    print("\033[1m\"2.. 3.. Hello, we are BTS!\"\033[0m")
     print("\nThank you for choosing...")
     # The \033[95m" + will make the colour of the text in the print code to the colour purple.
     # The '38' indicates to the program that the text is going to change colour.
@@ -263,11 +263,12 @@ def order_type():
 
 
     # Print statement that asks the user whether they want their order to be for Click & Collect or Delivery.
-    print ("Do you want your order to be CLICK & COLLECT or DELIVERED to you?\n")
+    #print ("Do you want your order to be CLICK & COLLECT or DELIVERED to you?\n")
+    print("Do you want your order to be \033[1mCLICK & COLLECT\033[0m or \033[1mDELIVERED\033[0m to you?\n")
 
     # Separate Print Statement lines.
-    print ("    ❀ For CLICK & COLLECT, enter 1.") # Print statement asking the user to enter d for Delivery.
-    print ("    ❀ For DELIVERY, enter 2.") # Print statement asking the user to enter c for Click & Collect.
+    print ("    ❀ For \033[1mCLICK & COLLECT\033[0m, enter \033[1m1\033[0m.") # Print statement asking the user to enter d for Delivery.
+    print ("    ❀ For \033[1mDELIVERY\033[0m, enter \033[1m2\033[0m.") # Print statement asking the user to enter c for Click & Collect.
     # Asking the user to enter their option.
     # The 'int' will make sure what the user inputs is an integer.
     delivery = val_int(LOW, HIGH, question)
@@ -295,14 +296,14 @@ def clickandcollect_info():
     # This will go into the customer_details dictionary and it will have a variable name of 'name'.
     # Getting the customer details name from the above function, bringing in the question.
     customer_details['name'] = check_string(question)# Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
-    print("    Your Name Is: {}." .format(customer_details['name']))
+    print("    \033[1mYour Name Is:\033[0m {}." .format(customer_details['name']))
 
 
     question = ("\n~ Please enter your phone number.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['phone'] = check_phone(PH_LOW, PH_HIGH, question) # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
-    print("    Your Phone Number Is: {}." .format(customer_details['phone']))
+    print("    \033[1mYour Phone Number Is:\033[0m {}." .format(customer_details['phone']))
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
 
@@ -316,35 +317,35 @@ def delivery_info():
     # This will go into the customer_details dictionary and it will have a variable name of 'name'.
     # Getting the customer details name from the above function, bringing in the question.
     customer_details['name'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
-    print("    Your Name Is: {}." .format(customer_details['name']))
+    print("    \033[1mYour Name Is:\033[0m {}." .format(customer_details['name']))
 
 
     question = ("\n~ Please enter your phone number.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['phone'] = check_phone(PH_LOW, PH_HIGH, question) # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
-    print("    Your Phone Number Is: {}." .format(customer_details['phone']))
+    print("    \033[1mYour Phone Number Is:\033[0m {}." .format(customer_details['phone']))
 
 
     question = ("\n~ Please enter your house number.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'house'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['house'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
-    print("    Your House Number Is: {}." .format(customer_details['house']))
+    print("    \033[1mYour House Number Is:\033[0m {}." .format(customer_details['house']))
 
 
     question = ("\n~ Please enter your street name.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'street'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['street'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
-    print("    Your Street Name Is: {}." .format(customer_details['street']))
+    print("    \033[1mYour Street Name Is:\033[0m {}." .format(customer_details['street']))
 
 
     question = ("\n~ Please enter your suburb.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'suburb'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['suburb'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
-    print("    Your Suburb Is: {}." .format(customer_details['suburb']))
+    print("    \033[1mYour Suburb Is:\033[0m {}." .format(customer_details['suburb']))
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
 
@@ -356,9 +357,9 @@ def albums():
     number_albums = 15 # This is the total number of albums that the bot will be selling.
 
     # The 'for' statement will create a loop that will start from 0 and will range through to the end of 'number_albums - 1' (from 0 to 14).
-    print("List of Albums Available:\n")
+    print("\033[1mList of Albums Available:\033[0m\n")
     for count in range (number_albums): # Taking 0.
-        print("  {})  {} \n        ~ Price: ${:.2f}\n" .format(count+1, album_names[count],album_prices[count])) # Prints out each of the album names and album prices by its integer.
+        print("  {})  {} \n        \033[1m~ Price:\033[0m ${:.2f}\n" .format(count+1, album_names[count],album_prices[count])) # Prints out each of the album names and album prices by its integer.
         # The {:.2f} rounds them up into 2 decimal places or 2 floats. The 0 appears now.
         # The count+1 will change the 2 Cool 4 Skool position from 0 to 1.
         # The album_names[count] will retrieve the name of the album at the current index, 'count', from the 'album_names' list.
@@ -408,7 +409,7 @@ def order_album():
             album_ordered = album_ordered -1 # The program will subtract 1 from the entered number of albums that the user wants to order. This is to match the index number of the album list.
             order_list.append(album_names[album_ordered]) # Picking out the album name from 'album_names' and is entered into the 'order_list'.
             order_cost.append(album_prices[album_ordered]) # Picking out the album price from 'album_prices' and is entered into the 'order_cost'.
-            print("    Album Chosen: {} \n                    ~ Price: ${:.2f}" .format(album_names[album_ordered],album_prices[album_ordered]))
+            print("    Album Chosen: {} \n                    \033[1m~ Price:\033[0m ${:.2f}" .format(album_names[album_ordered],album_prices[album_ordered]))
             # The selected albums and their names and prices will be displayed through the format, "Album name $Album price".
             # The {:.2f} rounds them up into 2 decimal places or 2 floats. The 0 appears now.
             # The album_names[count] will retrieve the name of the album at the current index, 'count', from the 'album_names' list.
@@ -440,7 +441,7 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
         break # Breaks out of the while loop so that the rest of the program can continue.
 
     total_cost = sum(order_cost)
-    print(" ~❀ Your Customer Details:") # Letting the user know that was is going to be printed will be their customer details.
+    print(" \033[1m~❀ Your Customer Details:\033[0m") # Letting the user know that was is going to be printed will be their customer details.
     # If the variable, 'del_click' is equal to 'clickandcollect', the following will be printed.
     if del_click == "clickandcollect":
         print("     ❀ Your Order is for Click & Collect.")
@@ -465,7 +466,7 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
         # For the 'Customer Street' in {customer_details['street']}, it will have the inserted value of the 'street' key from the 'customer_details' dictionary list.
         # For the 'Customer Suburb' in {customer_details['suburb']}, it will have the inserted value of the 'suburb' key from the 'customer_details' dictionary list.
     print()
-    print(" ~❀ Your Order Details:") # Letting the user know that was is going to be printed will be their order details.
+    print(" \033[1m~❀ Your Order Details:\033[0m") # Letting the user know that was is going to be printed will be their order details.
     count = 0 # 25.70 is at the position of 0.
     # The 'for' statement will create a loop that will go through each item in the 'order_list'.
     for item in order_list:
@@ -474,7 +475,7 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
         # The 'count' variable keeps track of the correct index in the 'order_cost' list.
         count = count+1 # Adding 1 to the 'count' variable so that next time, when the function picks out a different item, it will become a different number.
     print()
-    print("\n ~~~~❀ Total Order Cost") # Letting the user know that was is going to be printed will be their total order details.
+    print("\n \033[1m~~~~❀ Total Order Cost:\033[0m") # Letting the user know that was is going to be printed will be their total order details.
     print(f"        ${total_cost:.2f}") # The ':.2f' will round the sum of the order to 2 decimal places.
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
@@ -492,15 +493,15 @@ def confirm_cancel(del_click): # Paramter used to bring in the variable, 'del_cl
 
 
     print ("Please confirm your order.\n")
-    print ("    ❀ To CONFIRM, please enter 1.") # Letting the user know that entering 1 will CONFIRM their order.
-    print ("    ❀ To CANCEL, please enter 2.") # Letting the user know that entering 2 will CANCEL their order.
+    print ("    ❀ To \033[1mCONFIRM\033[0m, enter \033[1m1\033[0m.") # Letting the user know that entering 1 will CONFIRM their order.
+    print ("    ❀ To \033[1mCANCEL\033[0m, enter \033[1m2\033[0m.") # Letting the user know that entering 2 will CANCEL their order.
 
     # 'LOW' is 1, 'HIGH" is 2, 'question' is "Please enter a number between 1 and 2. ".
     confirm = val_int(LOW, HIGH, question)
 
     if confirm == 1: # If 'confirm' is equal to 1, the order is confirmed.
         # Letting the user know that the order has been confirmed.
-        print("\n~~❀ Your Order has been Confirmed. ❀~~")
+        print("\n\033[1m~~❀ Your Order has been Confirmed. ❀~~\033[0m")
         if del_click == "clickandcollect": # Bringing in the parameter of 'del_click' checks if Click and Collect was chosen.
             # Print statement printed only when click and collect was chosen.
             print("    You will receive a text message shortly to know when your order is ready to click and collect.")
@@ -513,7 +514,7 @@ def confirm_cancel(del_click): # Paramter used to bring in the variable, 'del_cl
 
     elif confirm == 2: # If 'confirm' is equal to 2, the order is cancelled.
         # Letting the user know that the order has been cancelled.
-        print("\n~~❀ Your Order has been Cancelled. ❀~~")
+        print("\n\033[1m~~❀ Your Order has been Cancelled. ❀~~\033[0m")
         print("    You can RESTART your order or EXIT the Bangtan Bot.")
         new_exit() # The function of starting a new order to exiting out of the Bangtan Bot program will run after cancelling.
         # When input is a number that is not 1 or 2.
