@@ -214,16 +214,17 @@ def welcome(): # This new function is defined as 'welcome'.
             suffix = '.' * i if i < 3 else '...'
             # The program will print "Loading Program" and depending on the value of i, the program will print the number of dots after the message.
             print("Loading Program" + suffix, end='\r', flush=True)
-            time.sleep(1) # Each '.' will appear after each second due to the '(1)'.
+            time.sleep(0.05) # Each '.' will appear after each second due to the '(1)'.
         break # Breaks out of the while loop so that the rest of the program can continue.
-    
+
     
     num = randint(0,9) # 0 is the lower bound, 9 is the upper bound. Generates a random number between 0 and 9.
     name = (names[num]) # Accessing the 'names' list to assign each with a number from 'num'.
     # START PRINTING THE GREETING. ~~~~~~~~~~~~~~
 
-    
-    print("2.. 3.. Hello, we are BTS!")
+
+    print("\"2.. 3.. Hello, we are BTS!\"")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     print("Thank you for choosing...")
     # The \033[95m" + will make the colour of the text in the print code to the colour purple.
     # The '38' indicates to the program that the text is going to change colour.
@@ -242,9 +243,10 @@ def welcome(): # This new function is defined as 'welcome'.
                                                                                                                                 
     """ + "\033[0m") # The line of code, \033[0m" will ensure that the colour will only affect this print statement.
     # If I do not do the code above, then the other print statements underneath BANGTAN BOT will also be of the colour purple.
-    print("We are a trusted chat bot that will help you make online orders for BTS albums!")
+    print("We are a trusted program that will help you make online orders for BTS albums!")
     print("My name is {}!". format(name)) # The '{}' will be replaced by what we have formatted, 'name', so that it is replaced with a randomly generated name from the list.
     print("I will be here to help you make your online orders!")
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
 
 
 # MENU FOR CLICK & COLLECT/DELIVERY. ~~~~~~~~~~~~~~
@@ -258,15 +260,15 @@ def order_type():
     # Asking the user to enter a number between 1 or 2 for testing.
     # A variable called 'question'.
     # Using 'f' to format the 'LOW' and 'HIGH' inside the '{}'.
-    question = (f"Please enter a number between {LOW} and {HIGH}. ")
+    question = (f"\nPlease enter a number between {LOW} and {HIGH}. ")
 
 
     # Print statement that asks the user whether they want their order to be for Click & Collect or Delivery.
-    print ("Do you want your order to be CLICK & COLLECT or DELIVERED to you?")
+    print ("Do you want your order to be CLICK & COLLECT or DELIVERED to you?\n")
 
     # Separate Print Statement lines.
-    print ("For CLICK & COLLECT, enter 1.") # Print statement asking the user to enter d for Delivery.
-    print ("For DELIVERY, enter 2.") # Print statement asking the user to enter c for Click & Collect.
+    print ("    For CLICK & COLLECT, enter 1.") # Print statement asking the user to enter d for Delivery.
+    print ("    For DELIVERY, enter 2.") # Print statement asking the user to enter c for Click & Collect.
     # Asking the user to enter their option.
     # The 'int' will make sure what the user inputs is an integer.
     delivery = val_int(LOW, HIGH, question)
