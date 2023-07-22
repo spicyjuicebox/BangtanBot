@@ -292,18 +292,18 @@ def order_type():
 # Question (variable) comes from here.
 # Defining the function, 'clickandcollect()' for the click and collect component of the main program.
 def clickandcollect_info():
-    question = ("Please enter your name. \n  Enter:  ") # Displaying our question.
+    question = ("~ Please enter your name.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'name'.
     # Getting the customer details name from the above function, bringing in the question.
     customer_details['name'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
-    print("Your Name Is: {}.\nNice to meet you!" .format(customer_details['name']))
+    print("    Your Name Is: {}." .format(customer_details['name']))
 
 
-    question = ("\nPlease enter your phone number. \n  Enter:  ") # Displaying our question.
+    question = ("\n~ Please enter your phone number.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['phone'] = check_phone(PH_LOW, PH_HIGH, question) # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
-    print("Your Phone Number Is: {}." .format(customer_details['phone']))
+    print("    Your Phone Number Is: {}." .format(customer_details['phone']))
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
 
@@ -313,21 +313,21 @@ def clickandcollect_info():
 def delivery_info():
     # Basic Instructions
     # Question (variable) comes from here.
-    question = ("Please enter your name. ") # Displaying our question.
+    question = ("~ Please enter your name.\n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'name'.
     # Getting the customer details name from the above function, bringing in the question.
     customer_details['name'] = check_string(question) # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
-    print(customer_details['name'])
+    print(" Your Name Is: {}.\n" .format(customer_details['name']))
 
 
-    question = ("Please enter your phone number. ") # Displaying our question.
+    question = ("\n~ Please enter your phone number. \n    Enter: ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['phone'] = check_phone(PH_LOW, PH_HIGH, question) # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
-    print(customer_details['phone'])
+    print(" Your Phone Number Is: {}." .format(customer_details['phone']))
 
 
-    question = ("Please enter your house number. ") # Displaying our question.
+    question = ("\n  ~ Please enter your house number. ") # Displaying our question.
     # This will go into the customer_details dictionary and it will have a variable name of 'house'.
     # Getting the customer details phone from the above function, bringing in the question.
     customer_details['house'] = not_blank(question) # Customer name will go to the function for 'not_blank'.
