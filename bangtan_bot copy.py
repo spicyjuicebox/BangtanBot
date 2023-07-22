@@ -537,12 +537,13 @@ def new_exit():
     # Asking the user to enter a number between 1 or 2 for testing.
     # A variable called 'question'.
     # Using 'f' to format the 'LOW' and 'HIGH' inside the '{}'.
-    question = (f"Please enter a number between {LOW} and {HIGH}. ")
+    question = (f"\n~ Please enter a number between {LOW} and {HIGH}.\n    Enter: ")
 
     # Asking the user if they want to start another order or to exit the Bangtan Bot program.
+    print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
     print ("Do you want to start another Order or Exit?")
-    print ("To start another order, please enter 1.") # Input of 1 will make another order.
-    print ("To exit the BOT, please enter 2.") # Input of 2 will exit the Bangtan Bot program.
+    print ("    ❀ To START ANOTHER ORDER, please enter 1.") # Input of 1 will make another order.
+    print ("    ❀ To EXIT the BOT, please enter 2.") # Input of 2 will exit the Bangtan Bot program.
 
     # 'LOW' is 1, 'HIGH" is 2, 'question' is "Please enter a number between 1 and 2. ".
     confirm = val_int(LOW, HIGH, question)
