@@ -458,7 +458,7 @@ def print_order(del_click): # Parameter used. The variable, 'del_click' is broug
         #print("Since you have ordered 5 or more albums, there will be a $9.00 delivery charge.")
         #total_cost = total_cost + 9 # Adding the $9.00 delivery charge to the total cost of the order.
         # Print statement that is used to display to the user the details of their order after being formatted.
-        print(f"Customer Name: {customer_details['name']} \nCustomer Phone: {customer_details['phone']} \nCustomer Address: {customer_details['house']} \nCustomer Street: {customer_details['street']} \nCustomer Suburb: {customer_details['suburb']}")
+        print(f"     ❀ Customer Name: {customer_details['name']} \n     ❀ Customer Phone: {customer_details['phone']} \n     ❀ Customer Address: {customer_details['house']} \n     ❀ Customer Street: {customer_details['street']} \n     ❀ Customer Suburb: {customer_details['suburb']}")
         # The 'f' at the front is a way to format.
         # For the 'Customer Name' in {customer_details['name']}, it will have the inserted value of the 'name' key from the 'customer_details' dictionary list.
         # For the 'Customer Phone' in {customer_details['phone']}, it will have the inserted value of the 'phone' key from the 'customer_details' dictionary list.
