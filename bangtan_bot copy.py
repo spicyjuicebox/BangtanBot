@@ -83,7 +83,8 @@ def not_blank(question): # This is a parameter. It brings variables ('question')
         # When the condition for the 'if' statement is false, the program will skip to the 'else' code.
         else:
             # The 'else' statement will print this line of code.
-            print("\n ~! This cannot be blank.\n")
+            print("\n \033[38;2;255;116;116m~! This cannot be blank.\033[0m")
+            #print("\n ~! This cannot be blank.\n")
 
 
 # VALIDATION found here. ~~~~~~~~~~~~~~
@@ -101,7 +102,8 @@ def check_string(question): # Bringing in the variable, 'question', into the fun
 
         # If it is not alphabetical, run the 'if' statement.
         if x == False:
-            print("\n ~! Input must only contain letters.\n")
+            print("\n \033[38;2;255;116;116m~! Input must only contain letters.\033[0m")
+            #print("\n ~! Input must only contain letters.\n")
             # Will continue to run the loop until correct input.
         else:
             return(response.title()) # The response will be printed and the first letter will be capitalised.
@@ -134,12 +136,17 @@ def val_int(low, high, question): # Parameter, using three variables in the func
                 # Will return the number back to the 'delivery' variable in the 'order_type()' function.
             # When input is a number that is not 1, low, or 2, high, the program will run the else statement.
             else:
-                print(f"\n ~! Your number should have been between {low} and {high}.\n") # Letting the user know why their input did not work.
+                print(f"\n \033[38;2;255;116;116m~! Your number should have been between {low} and {high}.\033[0m")
+                #print("\n \033[38;2;255;116;116m~! Your number should have been between {low} and {high}.\033[0m")
+                #print(f"\n ~! Your number should have been between {low} and {high}.\n") # Letting the user know why their input did not work.
         
         # When the user does not enter either '1' or '2', the ValueError will print these error messages.
         except ValueError:
-            print("\n ~! That is not a valid number.")
-            print(f"\n ~! Your number should have been between {low} and {high}.\n")
+            print("\n \033[38;2;255;116;116m~! That is not a valid number.\033[0m")
+            #print("\n ~! That is not a valid number.")
+            print(f"\n \033[38;2;255;116;116m~! Your number should have been between {low} and {high}.\033[0m")
+            #print("\n \033[38;2;255;116;116m~! Your number should have been between {low} and {high}.\033[0m")
+            #print(f"\n ~! Your number should have been between {low} and {high}.\n")
 
 
 # VALIDATION found here. ~~~~~~~~~~~~~~
@@ -170,10 +177,12 @@ def check_phone(PH_LOW, PH_HIGH, question):
                 # Leaving it as it is.
             # If the input phone number is not between and including 8 to 11 digits, the error message will print.
             else:
-                print("\n ~! NZ phone numbers must be 8 to 11 digits long.")
+                print("\n \033[38;2;255;116;116m~! NZ phone numbers must be 8 to 11 digits long.\033[0m")
+                #print("\n ~! NZ phone numbers must be 8 to 11 digits long.")
         # If the input phone number does not contain all numbers, the error message will print.\
         except ValueError:
-            print("\n ~! Please enter your phone number using only numbers.")
+            print("\n \033[38;2;255;116;116m~! Please enter your phone number using only numbers.\033[0m")
+            #print("\n ~! Please enter your phone number using only numbers.")
             # Should go into a loop until valid input is entered.
 
 
