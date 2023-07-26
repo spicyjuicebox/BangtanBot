@@ -536,15 +536,14 @@ def print_order(del_click):
     elif del_click == "delivery":
         print("     ❀ Your Order is for Delivery.")
         # Checking if 5 or more albums have been ordered.
-        if len(order_list) >= 5:
+        if len(order_list) <= 4:
             # The 'len' counts the list.
             # If there are 5 or more items ordered, make a print statement saying that there is a delivery charge of $9.00.
-            print(
-                "     ❀ Since you have ordered 5 or more albums, there will be a $9.00 delivery charge.")
+            print("     ❀ Since you have ordered 4 or less albums, there will be a $9.00 delivery charge.")
             # Adding the $9.00 delivery charge to the total cost.
             total_cost += 9
-        if len(order_list) <= 4:
-            print("     ❀ Since you have ordered 4 or less albums, your delivery will be free of charge.")
+        if len(order_list) >= 5:
+            print("     ❀ Since you have ordered 5 or more albums, your delivery will be free of charge.")
         # print("Since you have ordered 5 or more albums, there will be a $9.00 delivery charge.")
         # total_cost = total_cost + 9 # Adding the $9.00 delivery charge to the total cost of the order.
         # Print statement that is used to display to the user the details of their order after being formatted.
