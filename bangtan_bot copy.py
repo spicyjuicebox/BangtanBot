@@ -609,7 +609,7 @@ def confirm_cancel(del_click):
         # Bringing in the parameter of 'del_click' checks if Click and Collect was chosen.
         if del_click == "clickandcollect":
             # Print statement printed only when click and collect was chosen.
-            print("    You will receive a text message shortly to know when your order is ready to click and collect.")
+            print("    You will receive a text message shortly to know when your order is ready for collection.")
             # The function of starting a new order to exiting out of the Bangtan Bot program will run after confirming.
             new_exit()
         # Bringing in the parameter of 'del_click' checks if Delivery was chosen.
