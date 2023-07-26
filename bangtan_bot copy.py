@@ -248,7 +248,7 @@ def welcome():  # This new function is defined as 'welcome'.
             # The program will print "Loading Program" and depending on the value of i, the program will print the number of dots after the message.
             print("Loading Program" + suffix, end='\r', flush=True)
             # Each '.' will appear after each second due to the '(1)'.
-            time.sleep(0.05)
+            time.sleep(1)
         # Breaks out of the while loop so that the rest of the program can continue.
         break
 
@@ -517,7 +517,7 @@ def print_order(del_click):
             # The program will print "Printing Order Out" and depending on the value of i, the program will print the number of dots after the message.
             print("Printing Order Out" + suffix, end='\r', flush=True)
             # Each '.' will appear after each second due to the '(1)'.
-            time.sleep(0.5)
+            time.sleep(1)
         # Breaks out of the while loop so that the rest of the program can continue.
         break
 
