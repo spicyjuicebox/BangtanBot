@@ -114,7 +114,7 @@ def check_string(question):
         # If it is not alphabetical, run the 'if' statement.
         if x == False:
             print(
-                "\n \033[38;2;255;116;116m~! Input must only contain letters.\033[0m")
+                "\n \033[38;2;255;116;116m~! Input must only contain letters.\033[0m\n")
             # print("\n ~! Input must only contain letters.\n")
             # Will continue to run the loop until correct input.
         else:
@@ -153,7 +153,7 @@ def val_int(low, high, question):
             # When input is a number that is not 1, low, or 2, high, the program will run the else statement.
             else:
                 print(
-                    f"\n \033[38;2;255;116;116m~! Your number should have been between {low} and {high}.\033[0m")
+                    f"\n \033[38;2;255;116;116m~! Your number should have been between {low} and {high}.\033[0m\n")
                 # print("\n \033[38;2;255;116;116m~! Your number should have been between {low} and {high}.\033[0m")
                 # print(f"\n ~! Your number should have been between {low} and {high}.\n") # Letting the user know why their input did not work.
 
@@ -163,7 +163,7 @@ def val_int(low, high, question):
                 "\n \033[38;2;255;116;116m~! That is not a valid number.\033[0m")
             # print("\n ~! That is not a valid number.")
             print(
-                f"\n \033[38;2;255;116;116m~! Your number should have been between {low} and {high}.\033[0m")
+                f"\n \033[38;2;255;116;116m~! Your number should have been between {low} and {high}.\033[0m\n")
             # print("\n \033[38;2;255;116;116m~! Your number should have been between {low} and {high}.\033[0m")
             # print(f"\n ~! Your number should have been between {low} and {high}.\n")
 
@@ -296,7 +296,7 @@ def order_type():
     # A variable called 'question'.
     # Using 'f' to format the 'LOW' and 'HIGH' inside the '{}'.
     question = (
-        f"\n~ Please enter a number between {LOW} and {HIGH}.\n    Enter: ")
+        f"~ Please enter a number between {LOW} and {HIGH}.\n    Enter: ")
 
     # Print statement that asks the user whether they want their order to be for Click & Collect or Delivery.
     # print ("Do you want your order to be CLICK & COLLECT or DELIVERED to you?\n")
@@ -311,7 +311,7 @@ def order_type():
     # print ("    ❀ For \033[1mCLICK & COLLECT\033[0m, enter \033[1m1\033[0m.")
     # Print statement asking the user to enter c for Click & Collect.
     print(
-        "    ❀ For \033[38;2;215;187;245m\033[1mDELIVERY\033[0m, enter \033[38;2;215;187;245m\033[1m2\033[0m.")
+        "    ❀ For \033[38;2;215;187;245m\033[1mDELIVERY\033[0m, enter \033[38;2;215;187;245m\033[1m2\033[0m.\n")
     # print ("    ❀ For \033[1mDELIVERY\033[0m, enter \033[1m2\033[0m.")
     # Asking the user to enter their option.
     # The 'int' will make sure what the user inputs is an integer.
@@ -394,20 +394,20 @@ def delivery_info():
     # Getting the customer details phone from the above function, bringing in the question.
     # Customer name will go to the function for 'not_blank'.
     customer_details['house'] = not_blank(question)
-    print("    \033[1mYour House Number Is:\033[0m {}." .format(
+    print("    \033[1mYour House Number Is:\033[0m {}.\n" .format(
         customer_details['house']))
 
     # Displaying our question.
-    question = ("\n~ Please enter your street name.\n    Enter: ")
+    question = ("~ Please enter your street name.\n    Enter: ")
     # This will go into the customer_details dictionary and it will have a variable name of 'street'.
     # Getting the customer details phone from the above function, bringing in the question.
     # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
     customer_details['street'] = check_string(question)
-    print("    \033[1mYour Street Name Is:\033[0m {}." .format(
+    print("    \033[1mYour Street Name Is:\033[0m {}.\n" .format(
         customer_details['street']))
 
     # Displaying our question.
-    question = ("\n~ Please enter your suburb.\n    Enter: ")
+    question = ("~ Please enter your suburb.\n    Enter: ")
     # This will go into the customer_details dictionary and it will have a variable name of 'suburb'.
     # Getting the customer details phone from the above function, bringing in the question.
     # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
@@ -543,6 +543,8 @@ def print_order(del_click):
                 "     ❀ Since you have ordered 5 or more albums, there will be a $9.00 delivery charge.")
             # Adding the $9.00 delivery charge to the total cost.
             total_cost += 9
+        if len(order_list) <= 4:
+            print("     ❀ Since you have ordered 4 or less albums, your delivery will be free of charge.")
         # print("Since you have ordered 5 or more albums, there will be a $9.00 delivery charge.")
         # total_cost = total_cost + 9 # Adding the $9.00 delivery charge to the total cost of the order.
         # Print statement that is used to display to the user the details of their order after being formatted.
@@ -571,7 +573,7 @@ def print_order(del_click):
     print(" \033[38;2;215;187;245m~❀ Total Order Cost:\033[0m")
     # print("\n \033[1m~~~~❀ Total Order Cost:\033[0m")
     # The ':.2f' will round the sum of the order to 2 decimal places.
-    print(f"        ${total_cost:.2f}")
+    print(f"     ${total_cost:.2f}")
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
 
@@ -585,7 +587,7 @@ def confirm_cancel(del_click):
     # A variable called 'question'.
     # Using 'f' to format the 'LOW' and 'HIGH' inside the '{}'.
     question = (
-        f"\n~ Please enter a number between {LOW} and {HIGH}.\n    Enter: ")
+        f"~ Please enter a number between {LOW} and {HIGH}.\n    Enter: ")
 
     print("Please confirm your order.\n")
     # Letting the user know that entering 1 will CONFIRM their order.
@@ -594,7 +596,7 @@ def confirm_cancel(del_click):
     # print ("    ❀ To \033[1mCONFIRM\033[0m, enter \033[1m1\033[0m.")
     # Letting the user know that entering 2 will CANCEL their order.
     print(
-        "    ❀ To \033[38;2;255;116;116mCANCEL\033[0m, enter \033[38;2;255;116;116m2\033[0m.")
+        "    ❀ To \033[38;2;255;116;116mCANCEL\033[0m, enter \033[38;2;255;116;116m2\033[0m.\n")
     # print ("    ❀ To \033[1mCANCEL\033[0m, enter \033[1m2\033[0m.")
 
     # 'LOW' is 1, 'HIGH" is 2, 'question' is "Please enter a number between 1 and 2. ".
@@ -603,7 +605,7 @@ def confirm_cancel(del_click):
     if confirm == 1:  # If 'confirm' is equal to 1, the order is confirmed.
         # Letting the user know that the order has been confirmed.
         print(
-            "\033[38;2;155;240;189m\033[1m~~❀ Your Order has been Confirmed. ❀~~\033[0m")
+            "\n\n\033[38;2;155;240;189m\033[1m~~❀ Your Order has been Confirmed. ❀~~\033[0m")
         # print("\n\033[1m~~❀ Your Order has been Confirmed. ❀~~\033[0m")
         # Bringing in the parameter of 'del_click' checks if Click and Collect was chosen.
         if del_click == "clickandcollect":
@@ -622,7 +624,7 @@ def confirm_cancel(del_click):
     elif confirm == 2:  # If 'confirm' is equal to 2, the order is cancelled.
         # Letting the user know that the order has been cancelled.
         print(
-            "\033[38;2;255;116;116m\033[1m~~❀ Your Order has been Cancelled. ❀~~\033[0m")
+            "\n\n\033[38;2;255;116;116m\033[1m~~❀ Your Order has been Cancelled. ❀~~\033[0m")
         # print("\n\033[1m~~❀ Your Order has been Cancelled. ❀~~\033[0m")
         print("    You can RESTART your order or EXIT the Bangtan Bot.")
         # The function of starting a new order to exiting out of the Bangtan Bot program will run after cancelling.
@@ -647,18 +649,18 @@ def new_exit():
     # A variable called 'question'.
     # Using 'f' to format the 'LOW' and 'HIGH' inside the '{}'.
     question = (
-        f"\n~ Please enter a number between {LOW} and {HIGH}.\n    Enter: ")
+        f"~ Please enter a number between {LOW} and {HIGH}.\n    Enter: ")
 
     # Asking the user if they want to start another order or to exit the Bangtan Bot program.
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
-    print("Do you want to start another Order or Exit?")
+    print("Do you want to start another Order or Exit?\n")
     # Input of 1 will make another order.
     print(
         "    ❀ To \033[38;2;155;240;189mSTART ANOTHER ORDER\033[0m, enter \033[38;2;155;240;189m1\033[0m.")
     # print ("    ❀ To \033[1mSTART ANOTHER ORDER\033[0m, enter \033[1m1\033[0m.")
     # Input of 2 will exit the Bangtan Bot program.
     print(
-        "    ❀ To \033[38;2;255;116;116mEXIT\033[0m, enter \033[38;2;255;116;116m2\033[0m.")
+        "    ❀ To \033[38;2;255;116;116mEXIT\033[0m, enter \033[38;2;255;116;116m2\033[0m.\n")
     # print ("    ❀ To \033[1mEXIT\033[0m, enter \033[1m2\033[0m.")
 
     # 'LOW' is 1, 'HIGH" is 2, 'question' is "Please enter a number between 1 and 2. ".
@@ -667,7 +669,7 @@ def new_exit():
     if confirm == 1:  # If 'confirm' is equal to 1, a new order will be made.
         # Letting the user know that a new order will be made.
         print(
-            "\033[38;2;155;240;189m\033[1m~~❀ You Chose to Create a New Order. ❀~~\033[0m\n\n\n\n")
+            "\n\n\033[38;2;155;240;189m\033[1m~~❀ You Chose to Create a New Order. ❀~~\033[0m\n\n\n\n")
         # print ("\033[1m~~❀ You Chose to Create a New Order. ❀~~\033[0m\n\n\n\n")
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         # Clearing the data from the current order from all lists.
@@ -700,7 +702,7 @@ def new_exit():
     elif confirm == 2:  # If 'confirm' is equal to 2, the program will stop.
         # Letting the user know that they will now exit out of the Bangtan Bot program.
         print(
-            "\033[38;2;255;116;116m\033[1m~~❀ You Chose to Exit the Program. ❀~~\033[0m")
+            "\n\n\033[38;2;255;116;116m\033[1m~~❀ You Chose to Exit the Program. ❀~~\033[0m")
         # print ("\033[1m~~❀ You Chose to Exit the Program. ❀~~\033[0m")
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         order_list.clear()  # Clearing data from the list, 'order_list'.
