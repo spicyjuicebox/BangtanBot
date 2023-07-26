@@ -539,11 +539,13 @@ def print_order(del_click):
         if len(order_list) <= 4:
             # The 'len' counts the list.
             # If there are 5 or more items ordered, make a print statement saying that there is a delivery charge of $9.00.
-            print("     ❀ Since you have ordered 4 or less albums, there will be a $9.00 delivery charge.")
+            print(
+                "     ❀ Since you have ordered 4 or less albums, there will be a $9.00 delivery charge.")
             # Adding the $9.00 delivery charge to the total cost.
             total_cost += 9
         if len(order_list) >= 5:
-            print("     ❀ Since you have ordered 5 or more albums, your delivery will be free of charge.")
+            print(
+                "     ❀ Since you have ordered 5 or more albums, your delivery will be free of charge.")
         # print("Since you have ordered 5 or more albums, there will be a $9.00 delivery charge.")
         # total_cost = total_cost + 9 # Adding the $9.00 delivery charge to the total cost of the order.
         # Print statement that is used to display to the user the details of their order after being formatted.
@@ -609,7 +611,8 @@ def confirm_cancel(del_click):
         # Bringing in the parameter of 'del_click' checks if Click and Collect was chosen.
         if del_click == "clickandcollect":
             # Print statement printed only when click and collect was chosen.
-            print("    You will receive a text message shortly to know when your order is ready for collection.")
+            print(
+                "    You will receive a text message shortly to know when your order is ready for collection.")
             # The function of starting a new order to exiting out of the Bangtan Bot program will run after confirming.
             new_exit()
         # Bringing in the parameter of 'del_click' checks if Delivery was chosen.
