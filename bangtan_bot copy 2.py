@@ -321,7 +321,7 @@ def order_type():
 # Defining the function, 'clickandcollect()' for the click and collect component of the main program.
 def clickandcollect_info():
     # Displaying our question (name).
-    question = ("~ Please enter your name.\n    Enter: ")
+    question = ("~ Please enter your name (no spaces, please).\n    Enter: ")
     # This will go into the customer_details dictionary and it will have a variable name of 'name'.
     # Getting the customer details 'name' from the above function, bringing in the question.
     # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
@@ -330,7 +330,7 @@ def clickandcollect_info():
         customer_details['name']))
 
     # Displaying our question (phone number).
-    question = ("\n~ Please enter your phone number (no spaces).\n    Enter: ")
+    question = ("\n~ Please enter your phone number (no spaces, please).\n    Enter: ")
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details 'phone' from the above function, bringing in the question.
     # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
@@ -347,7 +347,7 @@ def delivery_info():
     # Basic Instructions.
     # Question (variable) comes from here.
     # Displaying our question (name).
-    question = ("~ Please enter your name.\n    Enter: ")
+    question = ("~ Please enter your name (no spaces, please).\n    Enter: ")
     # This will go into the customer_details dictionary and it will have a variable name of 'name'.
     # Getting the customer details 'name' from the above function, bringing in the question.
     # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
@@ -356,7 +356,7 @@ def delivery_info():
         customer_details['name']))
 
     # Displaying our question (phone).
-    question = ("\n~ Please enter your phone number (no spaces).\n    Enter: ")
+    question = ("\n~ Please enter your phone number (no spaces, please).\n    Enter: ")
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details 'phone' from the above function, bringing in the question.
     # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
@@ -383,7 +383,7 @@ def delivery_info():
         customer_details['street']))
 
     # Displaying our question (suburb).
-    question = ("~ Please enter your suburb.\n    Enter: ")
+    question = ("~ Please enter your suburb (no spaces, please).\n    Enter: ")
     # This will go into the customer_details dictionary and it will have a variable name of 'suburb'.
     # Getting the customer details 'suburb' from the above function, bringing in the question.
     # Customer name will go to the function for 'check_string(question)' to check if the input is all alphabetical.
@@ -499,7 +499,7 @@ def order_more_album():
     if morealbums == 1:  # If 'morealbums' is equal to 1, the user will be buying more albums.
         # Letting the user know that they will be ordering more albums.
         print(
-            "\n\n\033[38;2155;240;189;m\033[1m~~❀ You are now ordering more albums. ❀~~\033[0m")
+            "\n\n\033[38;2;155;240;189m\033[1m~~❀ You are now ordering more albums. ❀~~\033[0m")
         print("\nPrinting the list of albums again.\n")
         print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
         # Making a variable (Will count through 15 times).
@@ -573,7 +573,7 @@ def order_more_album():
     elif morealbums == 2:  # If 'confirm' is equal to 2, the order is cancelled.
         # Letting the user know that the order has been cancelled.
         print(
-            "\n\n\033[38;2;255;116;116m\033[1m~~❀ You are now finished with ordering. ❀~~\033[0m")
+            "\n\n\033[38;2;155;240;189m\033[1m~~❀ You are now finished with ordering. ❀~~\033[0m\n")
         # print("\n\033[1m~~❀ Your Order has been Cancelled. ❀~~\033[0m")
         print("    Continuing with your order.")
 
