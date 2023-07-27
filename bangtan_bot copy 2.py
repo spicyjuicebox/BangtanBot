@@ -674,11 +674,9 @@ def confirm_cancel(del_click):
 
     print("Please confirm your order.\n")
     # Letting the user know that entering 1 will CONFIRM their order.
-    print(
-        "    ❀ To \033[38;2;155;240;189mCONFIRM\033[0m, enter \033[38;2;155;240;189m1\033[0m.")
+    print("    ❀ To \033[1;38;2;155;240;189mCONFIRM\033[0m, enter \033[1;38;2;155;240;189m1\033[0m.")
     # Letting the user know that entering 2 will CANCEL their order.
-    print(
-        "    ❀ To \033[38;2;255;116;116mCANCEL\033[0m, enter \033[38;2;255;116;116m2\033[0m.\n")
+    print("    ❀ To \033[1;38;2;255;116;116mCANCEL\033[0m, enter \033[1;38;2;255;116;116m2\033[0m.\n")
 
     # 'LOW' is 1, 'HIGH" is 2, 'question' is "Please enter a number between 1 and 2. ".
     confirm = val_int(LOW, HIGH, question)
@@ -734,11 +732,9 @@ def new_exit():
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
     print("Do you want to start another Order or Exit?\n")
     # Input of 1 will make another order.
-    print(
-        "    ❀ To \033[38;2;155;240;189mSTART ANOTHER ORDER\033[0m, enter \033[38;2;155;240;189m1\033[0m.")
+    print("    ❀ To \033[1;38;2;155;240;189mSTART ANOTHER ORDER\033[0m, enter \033[1;38;2;155;240;189m1\033[0m.")
     # Input of 2 will exit the Bangtan Bot program.
-    print(
-        "    ❀ To \033[38;2;255;116;116mEXIT\033[0m, enter \033[38;2;255;116;116m2\033[0m.\n")
+    print("    ❀ To \033[1;38;2;255;116;116mEXIT\033[0m, enter \033[1;38;2;255;116;116m2\033[0m.\n")
 
     # 'LOW' is 1, 'HIGH" is 2, 'question' is "Please enter a number between 1 and 2. ".
     confirm = val_int(LOW, HIGH, question)
