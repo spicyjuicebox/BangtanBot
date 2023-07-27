@@ -263,8 +263,8 @@ def welcome():  # This new function is defined as 'welcome'.
     # If I do not do the code above, then the other print statements underneath BANGTAN BOT will also be of the colour purple.
     print("We are a trusted program that will help you make online orders for BTS albums!")
     # The '{}' will be replaced by what we have formatted, 'name', so that it is replaced with a randomly generated name from the list.
-    print(" My name is {}!". format(name))
-    print(" I will be here to help you make your online orders!\n")
+    print(" ~❀ My name is {}!". format(name))
+    print(" ~❀ I will be here to help you make your online orders!\n")
     print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
 
