@@ -87,7 +87,8 @@ def not_blank(question):
         response = input(question)
         if response != "":  # Here, we are going to return the response back out with the function. it is asking for a response and is checking to see if it is blank.
             # Capitalizing the first letter of what is entered.
-            return response.title() # The return will kick out of the loop. It will return it back down and be entered into the dictionary.
+            # The return will kick out of the loop. It will return it back down and be entered into the dictionary.
+            return response.title()
         # When the condition for the 'if' statement is false, the program will skip to the 'else' code.
         else:
             # The 'else' statement will print this line of code (error message).
@@ -330,7 +331,8 @@ def clickandcollect_info():
         customer_details['name']))
 
     # Displaying our question (phone number).
-    question = ("\n~ Please enter your phone number (no spaces, please).\n    Enter: ")
+    question = (
+        "\n~ Please enter your phone number (no spaces, please).\n    Enter: ")
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details 'phone' from the above function, bringing in the question.
     # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
@@ -356,7 +358,8 @@ def delivery_info():
         customer_details['name']))
 
     # Displaying our question (phone).
-    question = ("\n~ Please enter your phone number (no spaces, please).\n    Enter: ")
+    question = (
+        "\n~ Please enter your phone number (no spaces, please).\n    Enter: ")
     # This will go into the customer_details dictionary and it will have a variable name of 'phone'.
     # Getting the customer details 'phone' from the above function, bringing in the question.
     # Customer phone number will go to the function for 'check_phone(PH_LOW, PH_HIGH, question)' to check if the input is all numbers.
@@ -511,7 +514,7 @@ def order_more_album():
         print("\033[1mList of Albums Available:\033[0m\n")
         for count in range(number_albums):  # Taking 0.
             print(" \033[38;2;176;120;249m{})\033[0m  {} \n        \033[38;2;155;240;189m~ Price: ${:.2f}\033[0m\n".format(count+1,
-                album_names[count], album_prices[count]))  # Prints out each of the album names and album prices by its integer.
+                                                                                                                           album_names[count], album_prices[count]))  # Prints out each of the album names and album prices by its integer.
         # The {:.2f} rounds them up into 2 decimal places or 2 floats. The 0 appears now.
         # The count+1 will change the 2 Cool 4 Skool position from 0 to 1.
         # The album_names[count] will retrieve the name of the album at the current index, 'count', from the 'album_names' list.
@@ -520,7 +523,6 @@ def order_more_album():
 
         # Bringing in the code from the 'order_album()' function to ask the user what albums they want to order again.
         # Ask for total number of albums for order.
-
 
         # Setting the variable 'NUM_LOW' to 1 and the variable 'NUM_HIGH' to 8.
         # NUM_LOW and NUM_HIGH are capitals which means that they are constant.
@@ -548,7 +550,8 @@ def order_more_album():
         for item in range(num_albums):
             # Another loop is made with the 'while' statement to ensure that the user can enter their chosen number.
             while num_albums > 0:
-                print("\nChoose the album you would like to order by entering its corresponding number from the list provided.")
+                print(
+                    "\nChoose the album you would like to order by entering its corresponding number from the list provided.")
                 question = (
                     f"~ Please enter a number between {MENU_LOW} and {MENU_HIGH}.\n    Enter: ")
                 album_ordered = val_int(MENU_LOW, MENU_HIGH, question)
@@ -568,7 +571,6 @@ def order_more_album():
                 # The output will be printed out through the format, "{album_number} {album_name} ${album_price}".
                 # Ordered the first album, going back to order the rest of them, taking 1 off that total.
                 num_albums = num_albums-1
-
 
     elif morealbums == 2:  # If 'confirm' is equal to 2, the order is cancelled.
         # Letting the user know that the order has been cancelled.
@@ -647,7 +649,7 @@ def print_order(del_click):
     # The 'for' statement will create a loop that will go through each item in the 'order_list'.
     for item in order_list:
         print("     ❀ \033[1mAlbum Ordered:\033[0m {}  \033[1m~~\033[0m  \033[1mAlbum Cost:\033[0m ${:.2f}" .format(
-            item, order_cost[count])) # Will print the formatted albums ordered and their corresponding price.
+            item, order_cost[count]))  # Will print the formatted albums ordered and their corresponding price.
         # The ':.2f' will round the cost of each ordered album to 2 decimal places.
         # The 'count' variable keeps track of the correct index in the 'order_cost' list.
         # Adding 1 to the 'count' variable so that next time, when the function picks out a different item, it will become a different number.
@@ -674,9 +676,11 @@ def confirm_cancel(del_click):
 
     print("Please confirm your order.\n")
     # Letting the user know that entering 1 will CONFIRM their order.
-    print("    ❀ To \033[1;38;2;155;240;189mCONFIRM\033[0m, enter \033[1;38;2;155;240;189m1\033[0m.")
+    print(
+        "    ❀ To \033[1;38;2;155;240;189mCONFIRM\033[0m, enter \033[1;38;2;155;240;189m1\033[0m.")
     # Letting the user know that entering 2 will CANCEL their order.
-    print("    ❀ To \033[1;38;2;255;116;116mCANCEL\033[0m, enter \033[1;38;2;255;116;116m2\033[0m.\n")
+    print(
+        "    ❀ To \033[1;38;2;255;116;116mCANCEL\033[0m, enter \033[1;38;2;255;116;116m2\033[0m.\n")
 
     # 'LOW' is 1, 'HIGH" is 2, 'question' is "Please enter a number between 1 and 2. ".
     confirm = val_int(LOW, HIGH, question)
@@ -732,9 +736,11 @@ def new_exit():
     print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
     print("Do you want to start another Order or Exit?\n")
     # Input of 1 will make another order.
-    print("    ❀ To \033[1;38;2;155;240;189mSTART ANOTHER ORDER\033[0m, enter \033[1;38;2;155;240;189m1\033[0m.")
+    print(
+        "    ❀ To \033[1;38;2;155;240;189mSTART ANOTHER ORDER\033[0m, enter \033[1;38;2;155;240;189m1\033[0m.")
     # Input of 2 will exit the Bangtan Bot program.
-    print("    ❀ To \033[1;38;2;255;116;116mEXIT\033[0m, enter \033[1;38;2;255;116;116m2\033[0m.\n")
+    print(
+        "    ❀ To \033[1;38;2;255;116;116mEXIT\033[0m, enter \033[1;38;2;255;116;116m2\033[0m.\n")
 
     # 'LOW' is 1, 'HIGH" is 2, 'question' is "Please enter a number between 1 and 2. ".
     confirm = val_int(LOW, HIGH, question)
@@ -804,7 +810,7 @@ def new_exit():
             # Breaks out of the while loop so that the rest of the program can continue.
             break
 
-        sys.exit() # Exiting out of the program.
+        sys.exit()  # Exiting out of the program.
 
 
 # MAIN FUNCTION. ~~~~~~~~~~~~~~
