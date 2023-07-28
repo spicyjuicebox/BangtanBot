@@ -286,7 +286,7 @@ def order_type():
     print(
         "Do you want your order to be \033[38;2;176;120;249m\033[1mCLICK & COLLECT\033[0m or \033[38;2;215;187;245m\033[1mDELIVERED\033[0m to you?\n")
     print(
-        "Please note that for delivery orders, a $9.00 delivery charge will be added for 4 or less albums being ordered. Thank you!")
+        "Please note that for delivery orders, a $9.00 delivery charge will be added for 4 or less albums being ordered. Thank you!\n")
 
     # Separate Print Statement lines.
     # Print statement asking the user to enter 1 for Click & Collect.
@@ -695,14 +695,14 @@ def confirm_cancel(del_click):
         if del_click == "clickandcollect":
             # Print statement printed only when click and collect was chosen.
             print(
-                "    You will receive a text message shortly to know when your order is ready for collection.")
+                "\n    You will receive a text message shortly to know when your order is ready for collection.")
             # The function of starting a new order or exiting out of the Bangtan Bot program will run after confirming.
             new_exit()
         # Bringing in the parameter of 'del_click' checks if Delivery was chosen.
         elif del_click == "delivery":
             # Print statement printed only when Delivery was chosen.
             print(
-                "    You will soon receive text messages to notify you of the status of your delivery.")
+                "\n    You will soon receive text messages to notify you of the status of your delivery.")
             # The function of starting a new order or exiting out of the Bangtan Bot program will run after confirming.
             new_exit()
 
@@ -710,7 +710,7 @@ def confirm_cancel(del_click):
         # Letting the user know that the order has been cancelled.
         print(
             "\n\n\033[38;2;255;116;116m\033[1m~~❀ Your Order has been Cancelled. ❀~~\033[0m")
-        print("    You can RESTART your order or EXIT the Bangtan Bot.")
+        print("\n    You can RESTART your order or EXIT the Bangtan Bot.")
         # The function of starting a new order or exiting out of the Bangtan Bot program will run after cancelling.
         new_exit()
 
@@ -773,9 +773,9 @@ def new_exit():
                 # When i = 3, the suffix is set to '...' ('...' will appear). This will be the end of the sequence.
                 suffix = '.' * i if i < 3 else '...'
                 # The program will print "Starting New Order" and depending on the value of i, the program will print the number of dots after the message.
-                print("Starting New Order" + suffix, end='\r', flush=True)
+                print("New Order" + suffix, end='\r', flush=True)
                 # Each '.' will appear after each second due to the '(1)'.
-                time.sleep(0.5)
+                time.sleep(1)
             # Breaks out of the while loop so that the rest of the program can continue.
             break
 
@@ -808,7 +808,7 @@ def new_exit():
                 # The program will print "Exiting Program" and depending on the value of i, the program will print the number of dots after the message.
                 print("Exiting Program" + suffix, end='\r', flush=True)
                 # Each '.' will appear after each second due to the '(1)'.
-                time.sleep(0.5)
+                time.sleep(1)
             # Breaks out of the while loop so that the rest of the program can continue.
             break
 
