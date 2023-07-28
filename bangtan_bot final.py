@@ -472,7 +472,6 @@ def order_album():
             # The output will be printed out through the format, "{album_number} {album_name} ${album_price}".
             # Ordered the first album, going back to order the rest of them, taking 1 off that total.
             num_albums = num_albums-1
-            print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
 
 
 # BUYING MORE ALBUMS. ~~~~~~~~~~~~~~
@@ -484,6 +483,7 @@ def order_more_album():
         f"~ Please enter a number between {LOW} and {HIGH}.\n    Enter: ")
 
     # Print statement that asks the user whether they want to BUY MORE ALBUMS or if they are FINISHED ORDERING.
+    print("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ⟭⟬\n")
     print("If you wish to order more albums, this is your final time to do so.")
     print()
     print(
