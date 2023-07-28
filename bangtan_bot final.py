@@ -285,6 +285,8 @@ def order_type():
     # Print statement that asks the user whether they want their order to be for Click & Collect or Delivery.
     print(
         "Do you want your order to be \033[38;2;176;120;249m\033[1mCLICK & COLLECT\033[0m or \033[38;2;215;187;245m\033[1mDELIVERED\033[0m to you?\n")
+    print(
+        "Please note that for delivery orders, a $9.00 delivery charge will be added for 4 or less albums being ordered. Thank you!")
 
     # Separate Print Statement lines.
     # Print statement asking the user to enter 1 for Click & Collect.
