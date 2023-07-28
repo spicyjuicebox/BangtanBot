@@ -690,7 +690,7 @@ def confirm_cancel(del_click):
     if confirm == 1:  # If 'confirm' is equal to 1, the order is confirmed.
         # Letting the user know that the order has been confirmed.
         print(
-            "\n\n\033[38;2;155;240;189m\033[1m~~❀ Your Order has been Confirmed. ❀~~\033[0m")
+            "\n\n\033[38;2;155;240;189m\033[1m~~❀ Your Order has been Confirmed! ❀~~\033[0m")
         # Bringing in the parameter of 'del_click' checks if Click and Collect was chosen.
         if del_click == "clickandcollect":
             # Print statement printed only when click and collect was chosen.
